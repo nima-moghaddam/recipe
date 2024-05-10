@@ -31,8 +31,7 @@ export default async function Home({
         {recipies.map((recipe: IRecipe) => (
           <RecipeCard
             key={recipe.id}
-            image={recipe.image}
-            title={recipe.title}
+            recipe={recipe}
           />
         ))}
       </div>

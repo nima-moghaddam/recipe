@@ -40,7 +40,7 @@ const Search = ({recipies}: ISearch) => {
         placeholder="Search"
         onKeyDown={handleUserType}
         onChange={handleUserType}
-        defaultValue={searchParams.get("query"?.toString()) || ""}
+        defaultValue={""}
       />
       <div className="absolute inset-y-0 left-0 w-7 pl-3 flex items-center pointer-events-none">
         <SearchSvg />
