@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
 
   return (
     <div className="border shadow-sm rounded overflow-hidden">
-      <div className="relative h-0 pb-[50%]">
+      <div className="relative mb-1 h-0 pb-[50%]">
         <Image
           alt="image"
           src={image}

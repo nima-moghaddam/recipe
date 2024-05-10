@@ -2,7 +2,7 @@
 import OptionSvg from "@/ui/OptionSvg";
 import SearchSvg from "@/ui/SearchSvg";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 interface ISearch {
@@ -40,7 +40,7 @@ const Search = ({ recipies }: ISearch) => {
         className="pl-10 pr-4 py-2 border rounded-lg outline-none w-full focus:border-purple-500"
         placeholder="Search"
         onKeyDown={handleUserType}
-        onChange={handleUserType}
+        // onChange={handleUserType}
         defaultValue={""}
       />
       <div className="absolute inset-y-0 left-0 w-7 pl-3 flex items-center pointer-events-none">
