@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilledHeart = () => {
+const FilledHeartSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,4 +12,4 @@ const FilledHeart = () => {
   );
 };
 
-export default FilledHeart;
+export default FilledHeartSvg;

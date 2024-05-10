@@ -5,15 +5,16 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-interface ISearch {recipies: any}
+interface ISearch {
+  recipies: any;
+}
 
-const Search = ({recipies}: ISearch) => {
+const Search = ({ recipies }: ISearch) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace, push } = useRouter();
+  const router = useRouter();
 
   console.log(recipies);
-  
 
   const handleUserType = (
     e: ChangeEvent<HTMLInputElement> | KeyboardEvent<HTMLInputElement>
@@ -28,9 +29,9 @@ const Search = ({recipies}: ISearch) => {
       params.set("query", value.trim());
     } else {
       params.delete("query");
-      push('/')
+      router.push("/");
     }
-    replace(`${pathname}?${params.toString()}`);
+    router.replace(`${pathname}?${params.toString()}`);
   };
 
   return (

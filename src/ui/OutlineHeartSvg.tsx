@@ -1,6 +1,6 @@
 import React from "react";
 
-const OutlineHeart = () => {
+const OutlineHeartSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,4 +12,4 @@ const OutlineHeart = () => {
   );
 };
 
-export default OutlineHeart;
+export default OutlineHeartSvg;
