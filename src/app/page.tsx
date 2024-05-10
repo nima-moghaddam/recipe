@@ -1,7 +1,7 @@
 import RecipeCard from "@/components/RecipeCard";
 import Search from "@/components/Search";
+import { getRecipies } from "@/services/getRecipies";
 import { IRecipe } from "@/types/RecipeInterface";
-import { getRecipies } from "./services/getRecipies";
 
 export default async function Home({
   searchParams,

@@ -7,4 +7,5 @@ export interface IRecipe {
   dishTypes: string[]
   vegan: boolean
   veryPopular: boolean
+  pricePerServing: number
 }

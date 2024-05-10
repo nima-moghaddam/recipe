@@ -12,8 +12,12 @@ interface IRecipeCard {
 }
 
 const RecipeCard = ({ recipe }: IRecipeCard) => {
-  const { image, title, summary, readyInMinutes } = recipe;
+  const { image, title, summary, readyInMinutes, id } = recipe;
   const router = useRouter();
+
+  const handleDetail = () => {
+    router.push(`/recipe/${id}`);
+  };
 
   return (
     <div className="border shadow-sm rounded overflow-hidden">
@@ -32,10 +36,13 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
         <div className="mb-1 text-xs">
           cooking time {readyInMinutes} Minutes
         </div>
-        <p className="font-light line-clamp-3 text-xs">{summary}</p>
+        <p
+          dangerouslySetInnerHTML={{ __html: summary }}
+          className="font-light text-xs mb-2 line-clamp-3"
+        />
       </div>
       <div className="flex justify-between items-center p-2">
-        <Button name="Details" />
+        <Button name="Details" onClick={handleDetail} />
         <span className="w-5 h-5 cursor-pointer flex items-center">
           <FilledHeartSvg />
         </span>
