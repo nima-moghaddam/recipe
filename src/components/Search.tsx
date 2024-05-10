@@ -36,7 +36,6 @@ const Search = ({}: ISearch) => {
         className="pl-10 pr-4 py-2 border rounded-lg outline-none w-full focus:border-purple-500"
         placeholder="Search"
         onKeyDown={handleUserType}
-        // onChange={handleUserType}
         defaultValue={""}
       />
       <div className="absolute inset-y-0 left-0 w-7 pl-3 flex items-center pointer-events-none">

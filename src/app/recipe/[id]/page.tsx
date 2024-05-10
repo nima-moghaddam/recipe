@@ -15,8 +15,6 @@ export default async function RecipeDetail({
     summary,
     readyInMinutes,
     dishTypes,
-    vegan,
-    veryPopular,
     pricePerServing,
   } = recipeDetail;
 
@@ -40,7 +38,7 @@ export default async function RecipeDetail({
           <p className="font-bold mb-3">{title}</p>
 
           <div className="mb-1 font-bold text-xs">Price {pricePerServing}$</div>
-          <div className="mb-1 text-xs">
+          <div className="mb-1 text-xs text-red-300">
             cooking time {readyInMinutes} Minutes
           </div>
           <p
@@ -55,7 +53,7 @@ export default async function RecipeDetail({
                 {dishTypes.map((type, index) => (
                   <span
                     key={index}
-                    className="bg-slate-400 px-2 rounded text-white"
+                    className="bg-blue-300 px-2 rounded text-white"
                   >
                     {type}
                   </span>
