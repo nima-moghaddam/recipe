@@ -1,9 +1,8 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
-
-const rootReducer = combineReducers({});
+import { configureStore } from "@reduxjs/toolkit";
+import favouritSlice from "./favouritSlice";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    favourit: favouritSlice,
+  },
 });
-
-export type RootState = ReturnType<typeof rootReducer>;

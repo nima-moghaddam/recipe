@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
+import ReduxProvider from "@/redux/reduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main className="p-md-10 p-5">
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-        </main>
+        <ReduxProvider>
+          <Navbar />
+          <main className="p-md-10 p-5">
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </main>
+        </ReduxProvider>
       </body>
     </html>
   );

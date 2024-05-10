@@ -14,7 +14,7 @@ export default async function Home({
   return (
     <section>
       <div className="mb-5">
-        <Search recipies={recipies} />
+        <Search />
       </div>
       <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         {recipies.map((recipe: IRecipe) => (

@@ -6,6 +6,8 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
 import OutlineHeartSvg from "@/ui/OutlineHeartSvg";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
 
 interface IRecipeCard {
   recipe: IRecipe;
@@ -15,8 +17,18 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
   const { image, title, summary, readyInMinutes, id } = recipe;
   const router = useRouter();
 
+  const dispatch = useDispatch();
+  const { favorList } = useSelector((state: any) => state?.favourit);
+
   const handleDetail = () => {
     router.push(`/recipe/${id}`);
+  };
+
+  const isFavourite = favorList?.some((item: IRecipe) => item.id === id);
+
+  const handleFavourite = () => {
+    if (isFavourite) dispatch(removeFavourit(id));
+    else dispatch(addFavourit(recipe));
   };
 
   return (
@@ -43,8 +55,11 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
       </div>
       <div className="flex justify-between items-center p-2">
         <Button name="Details" onClick={handleDetail} />
-        <span className="w-5 h-5 cursor-pointer flex items-center">
-          <FilledHeartSvg />
+        <span
+          className="w-5 h-5 cursor-pointer flex items-center"
+          onClick={handleFavourite}
+        >
+          {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}
         </span>
       </div>
     </div>
