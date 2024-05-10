@@ -1,9 +1,10 @@
 const baseUrl = process.env.BASE_URL;
+const apiKey = process.env.API_KEY;
 
 export const getRecipies = async (query: string) => {
   try {
     const response = await fetch(
-      `${baseUrl}/recipes/complexSearch?apiKey=48e233e62ec84841a7a04d8eaa3e2b45&query=${query}&number=30&addRecipeInformation=true`,
+      `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=30&addRecipeInformation=true`,
       {
         headers: {
           "Content-Type": "application/json",

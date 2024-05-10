@@ -13,7 +13,6 @@ export default async function Home({
 
   return (
     <section>
-      <p>Current Param: {searchParams.query}</p>
       <div className="mb-5">
         <Search recipies={recipies} />
       </div>
