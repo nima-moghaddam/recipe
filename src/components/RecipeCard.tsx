@@ -49,10 +49,6 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
         <div className="mb-1 text-xs line-clamp-1">
           cooking time {totalTime} Minutes
         </div>
-        {/* <p
-          dangerouslySetInnerHTML={{ __html: summary }}
-          className="font-light text-xs mb-2 line-clamp-3"
-        /> */}
       </div>
       <div className="flex justify-between items-center p-2">
         <Button name="Details" onClick={handleDetail} />

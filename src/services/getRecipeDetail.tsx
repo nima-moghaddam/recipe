@@ -3,7 +3,6 @@ import { baseUrl, apiKey, appId, uriPrefix } from "@/enmus/ApiEnum";
 export const getRecipeDetail = async (id: string) => {
   try {
     const response = await fetch(
-      // `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`,
       `${baseUrl}/api/recipes/v2/by-uri?type=public&uri=${id}&app_id=${appId}&app_key=${apiKey}&field=uri&field=label&field=image&field=images&field=source&field=url&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=glycemicIndex&field=inflammatoryIndex&field=totalCO2Emissions&field=co2EmissionsClass&field=totalWeight&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=totalNutrients&field=totalDaily&field=digest&field=tags&field=externalId`,
       {
         headers: {

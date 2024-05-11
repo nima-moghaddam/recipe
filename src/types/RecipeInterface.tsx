@@ -1,3 +1,22 @@
+// ---------- edamam  -------------
+export interface IRecipe {
+  id?: string;
+  uri?: string;
+  calories: number;
+  image: string;
+  label: string;
+  ingredientLines: string[];
+  totalTime: number;
+  url: string;
+  mealType: string[];
+  totalWeight: number;
+  images: {
+    SMALL: {
+      url: string;
+    };
+  };
+}
+
 // ---------- spoonacular  -------------
 
 // export interface IRecipe {
@@ -11,26 +30,3 @@
 //   veryPopular: boolean
 //   pricePerServing: number
 // }
-
-
-
-// ---------- edamam  -------------
-
-
-export interface IRecipe {
-  id?: string
-  uri?: string;
-  calories: number;
-  image: string;
-  label: string;
-  ingredientLines: string[];
-  totalTime: number;
-  url: string;
-  mealType: string[]
-  totalWeight: number
-  images: {
-    SMALL: {
-      url: string;
-    };
-  };
-}

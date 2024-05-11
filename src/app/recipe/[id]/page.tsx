@@ -50,10 +50,6 @@ export default async function RecipeDetail({
           <div className="mb-1 text-xs text-red-300">
             - this food has {calories} calories
           </div>
-          {/* <p
-            dangerouslySetInnerHTML={{ __html: summary }}
-            className="font-light text-xs mb-2"
-          /> */}
 
           {!!ingredientLines?.length && (
             <div className="mb-2">
@@ -78,7 +74,7 @@ export default async function RecipeDetail({
                 {mealType.map((meal, index) => (
                   <span
                     key={index}
-                    className="bg-blue-300 px-2 rounded text-white"
+                    className="bg-green-300 px-2 rounded text-white"
                   >
                     {meal}
                   </span>
