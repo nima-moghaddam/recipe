@@ -32,6 +32,12 @@ npm install @reduxjs/toolkit
 npm install react-redux
 ```
 
+## Api
+
+for more info refer to  https://spoonacular.com/
+for more info refer to  https://developer.edamam.com/
+
+
 ## Deployment
 
 This is a step-by-step guide on how to deploy your Next.js project to Vercel using Git integration.
@@ -84,4 +90,3 @@ vercel alias <deployment-url> your-domain-name.vercel.app
 project depolyed with Vercel on https://recipe-project-vert.vercel.app/ link
 
 
-## Deployment

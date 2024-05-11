@@ -9,17 +9,20 @@ export default async function Home({
   searchParams: { query: string };
 }) {
   const data = await getRecipies(searchParams.query);
-  const recipies = data.results;
+  const recipies = data.hits.map((item: any) => ({
+    ...item.recipe,
+    id: item.recipe.uri?.split("_")[1],
+  }));
 
   return (
     <section>
-        <WarningWrapper message="No recipe found!" hasData={!!recipies?.length}>
-          <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-            {recipies.map((recipe: IRecipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
-        </WarningWrapper>
+      <WarningWrapper message="No recipe found!" hasData={!!recipies?.length}>
+        <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+          {recipies?.map((recipe: IRecipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
+        </div>
+      </WarningWrapper>
     </section>
   );
 }

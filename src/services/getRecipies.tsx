@@ -1,10 +1,10 @@
-const baseUrl = process.env.BASE_URL;
-const apiKey = process.env.API_KEY;
+import { baseUrl, apiKey, appId, uriPrefix } from "@/enmus/ApiEnum";
 
 export const getRecipies = async (query: string) => {
   try {
     const response = await fetch(
-      `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=30&addRecipeInformation=true`,
+      // `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=30&addRecipeInformation=true`,
+      `${baseUrl}/api/recipes/v2?type=public&q=${query}&app_id=${appId}&app_key=${apiKey}`,
       {
         headers: {
           "Content-Type": "application/json",

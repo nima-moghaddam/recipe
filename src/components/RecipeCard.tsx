@@ -14,7 +14,7 @@ interface IRecipeCard {
 }
 
 const RecipeCard = ({ recipe }: IRecipeCard) => {
-  const { image, title, summary, readyInMinutes, id } = recipe;
+  const { image, label, totalTime, id } = recipe;
   const router = useRouter();
 
   const dispatch = useDispatch();
@@ -39,19 +39,20 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           src={image}
           layout="fill"
           objectFit="cover"
-          sizes=""
+          objectPosition="center"
+          sizes="100vw"
         />
       </div>
 
       <div className="px-5">
-        <p className="font-bold line-clamp-1 mb-3">{title}</p>
-        <div className="mb-1 text-xs">
-          cooking time {readyInMinutes} Minutes
+        <p className="font-bold line-clamp-1 mb-3">{label}</p>
+        <div className="mb-1 text-xs line-clamp-1">
+          cooking time {totalTime} Minutes
         </div>
-        <p
+        {/* <p
           dangerouslySetInnerHTML={{ __html: summary }}
           className="font-light text-xs mb-2 line-clamp-3"
-        />
+        /> */}
       </div>
       <div className="flex justify-between items-center p-2">
         <Button name="Details" onClick={handleDetail} />
