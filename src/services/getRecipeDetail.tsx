@@ -9,6 +9,7 @@ export const getRecipeDetail = async (id: string) => {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       }
     );
 

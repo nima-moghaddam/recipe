@@ -1,33 +1,18 @@
-import RecipeCard from "@/components/RecipeCard";
-import Search from "@/components/Search";
-import WarningWrapper from "@/components/WarningWrapper";
-import { getRecipies } from "@/services/getRecipies";
-import { IRecipe } from "@/types/RecipeInterface";
+import FoodSvg from "@/ui/FoodSvg";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { query: string };
-}) {
-  const data = await getRecipies(searchParams.query);
-  const recipies = data.results;
-
+export default async function Home() {
   return (
     <section>
-      <div className="mb-5">
-        <Search />
-      </div>
-     
-      <WarningWrapper
-        hasData={!!recipies?.length}
-        message="Your search result is empty!"
-      >
-        <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          {recipies.map((recipe: IRecipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
+      <div className="flex flex-col items-center justify-center pt-20">
+        <div>
+          <FoodSvg />
         </div>
-      </WarningWrapper>
+        <h1 className="text-purple-500 font-extrabold">
+          Search for your food now...
+        </h1>
+      </div>
+
+     
     </section>
   );
 }

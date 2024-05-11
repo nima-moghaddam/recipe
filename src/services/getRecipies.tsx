@@ -9,6 +9,7 @@ export const getRecipies = async (query: string) => {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       }
     );
 

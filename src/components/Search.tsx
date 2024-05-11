@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-interface ISearch {}
 
-const Search = ({}: ISearch) => {
+const Search = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -23,17 +22,17 @@ const Search = ({}: ISearch) => {
       value.length > 0
     ) {
       params.set("query", value.trim());
+      router.push(`/recipe?${params.toString()}`);
     } else {
       params.delete("query");
-      router.push("/");
+      // router.push("/");
     }
-    router.replace(`${pathname}?${params.toString()}`);
   };
 
   return (
     <div className="relative w-full md:w-1/2">
       <input
-        className="pl-10 pr-4 py-2 border rounded-lg outline-none w-full focus:border-purple-500"
+        className="pl-10 pr-4 py-2 border rounded-lg outline-none w-full focus:border-purple-500 text-purple-500"
         placeholder="Search"
         onKeyDown={handleUserType}
         defaultValue={""}
