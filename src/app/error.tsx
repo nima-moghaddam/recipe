@@ -1,0 +1,25 @@
+"use client";
+import Button from "@/components/Button";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  const router = useRouter();
+
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
+  return (
+    <div className="w-full h-full p-5 mt-20 flex flex-col items-center justify-center">
+      <h2 className="mb-4">Something went wrong!</h2>
+      <Button name="Back to Homepage" onClick={() => router.push("/")} color="red" />
+    </div>
+  );
+}

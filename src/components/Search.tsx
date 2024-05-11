@@ -2,13 +2,12 @@
 import OptionSvg from "@/ui/OptionSvg";
 import SearchSvg from "@/ui/SearchSvg";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 const Search = () => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
   const router = useRouter();
 
   const handleUserType = (
@@ -25,7 +24,6 @@ const Search = () => {
       router.push(`/recipe?${params.toString()}`);
     } else {
       params.delete("query");
-      // router.push("/");
     }
   };
 
