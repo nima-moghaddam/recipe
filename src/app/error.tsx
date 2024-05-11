@@ -19,7 +19,15 @@ export default function Error({
   return (
     <div className="w-full h-full p-5 mt-20 flex flex-col items-center justify-center">
       <h2 className="mb-4">Something went wrong!</h2>
-      <Button name="Back to Homepage" onClick={() => router.push("/")} color="red" />
+      <div className="flex items-center">
+        <Button
+          name="Back to Homepage"
+          onClick={() => router.push("/")}
+          color="red"
+          classes="mr-2"
+        />
+        <Button name="Retry" onClick={() => reset()} color="blue" />
+      </div>
     </div>
   );
 }
