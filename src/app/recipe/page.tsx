@@ -1,6 +1,7 @@
 import RecipeCard from "@/components/RecipeCard";
 import WarningWrapper from "@/components/WarningWrapper";
 import { getRecipies } from "@/services/getRecipies";
+import { IQueryResponse } from "@/types/QueryInterface";
 import { IRecipe } from "@/types/RecipeInterface";
 
 export default async function Home({
@@ -8,9 +9,12 @@ export default async function Home({
 }: {
   searchParams: { query: string };
 }) {
-  const data = await getRecipies(searchParams.query);
-  const recipies = data.hits.map((item: any) => ({
+  const data: IQueryResponse = await getRecipies(searchParams.query);
+
+  const recipies = data.hits.map((item) => ({
     ...item.recipe,
+    // Edamam api does not provide any ID in response object
+    // so i derived it from its uri
     id: item.recipe.uri?.split("_")[1],
   }));
 

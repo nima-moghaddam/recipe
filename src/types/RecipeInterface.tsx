@@ -10,6 +10,12 @@ export interface IRecipe {
   url: string;
   mealType: string[];
   totalWeight: number;
+  yield: number;
+  digest: {
+    daily: number
+    label: string
+    unit: string
+  }[];
   images: {
     SMALL: {
       url: string;

@@ -4,10 +4,10 @@ interface IButton {
   name: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   color?: "blue" | "red" | "purple";
-  classes?: string
+  classes?: string;
 }
 
-const Button = ({ name, onClick, color = "blue",classes='' }: IButton) => {
+const Button = ({ name, onClick, color = "blue", classes = "" }: IButton) => {
   let colorClass = "bg-blue-500 hover:bg-blue-600";
 
   switch (color) {
