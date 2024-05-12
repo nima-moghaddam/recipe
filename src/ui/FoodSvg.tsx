@@ -5,8 +5,8 @@ const FoodSvg = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       data-name="Layer 1"
-      width="450"
-      height="450"
+      width="350"
+      height="350"
       viewBox="0 0 888 485.489"
     >
       <title>breakfast</title>
