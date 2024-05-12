@@ -2,7 +2,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const IndicatorBadge = () => {
+const Indicator = () => {
   const { favorList } = useSelector((state: any) => state?.favourit);
 
   return (
@@ -12,4 +12,4 @@ const IndicatorBadge = () => {
   );
 };
 
-export default IndicatorBadge;
+export default Indicator;

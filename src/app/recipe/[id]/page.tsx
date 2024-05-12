@@ -1,3 +1,4 @@
+import Badge from "@/components/Badge";
 import { uriPrefix } from "@/enmus/ApiEnum";
 import { getRecipeDetail } from "@/services/getRecipeDetail";
 import { IRecipe } from "@/types/RecipeInterface";
@@ -60,13 +61,8 @@ export default async function RecipeDetail({
             <div className="mb-2">
               <h3 className="mb-1">Ingredient types:</h3>
               <div className="flex flex-wrap gap-3">
-                {ingredientLines.map((ingredient, index) => (
-                  <span
-                    key={index}
-                    className="bg-blue-300 px-2 rounded text-white"
-                  >
-                    {ingredient}
-                  </span>
+                {ingredientLines.splice(0,8).map((ingredient, index) => (
+                  <Badge key={index} name={ingredient} />
                 ))}
               </div>
             </div>
@@ -77,12 +73,7 @@ export default async function RecipeDetail({
               <h3 className="mb-1">Meal types:</h3>
               <div className="flex flex-wrap gap-3">
                 {mealType.map((meal, index) => (
-                  <span
-                    key={index}
-                    className="bg-green-300 px-2 rounded text-white"
-                  >
-                    {meal}
-                  </span>
+                  <Badge key={index} name={meal} color="green" />
                 ))}
               </div>
             </div>
@@ -92,7 +83,10 @@ export default async function RecipeDetail({
             <h3 className="mb-1">Nutritions:</h3>
             <ul className="flex flex-col">
               {digest?.splice(0, 5).map((item) => (
-                <li key={item.label} className="flex justify-between text-[0.8rem] w-full md:w-1/4">
+                <li
+                  key={item.label}
+                  className="flex justify-between text-[0.8rem] w-full md:w-1/4"
+                >
                   <span className="mr-5">- {item.label}</span>
                   <div>
                     <span className="font-bold mr-[0.7px]">

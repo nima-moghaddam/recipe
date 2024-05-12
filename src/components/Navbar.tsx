@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import IndicatorBadge from "./IndicatorBadge";
+import Indicator from "./Indicator";
 import Search from "./Search";
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
             Home
           </Link>
           <div className="me-5 relative">
-            <IndicatorBadge />
+            <Indicator />
             <Link href={"/favourits"}>Favourits</Link>
           </div>
         </div>
