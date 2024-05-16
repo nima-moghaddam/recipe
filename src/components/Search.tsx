@@ -21,9 +21,9 @@ const Search = () => {
       value.length > 0
     ) {
       params.set("query", value.trim());
-      router.push(`/recipe?${params.toString()}`);
-    } else {
-      params.delete("query");
+      router.replace(`/recipe?${params.toString()}`);
+    } else if (!value.length) {
+      router.replace("/");
     }
   };
 
