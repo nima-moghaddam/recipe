@@ -90,3 +90,10 @@ vercel alias <deployment-url> your-domain-name.vercel.app
 project depolyed with Vercel on https://recipe-project-vert.vercel.app/ link
 
 
+## Links
+
+Figma ---->
+
+https://www.figma.com/design/Yk69jYZELaUJ3ixEbpe5QS/Recipedia---Landing-Page-(Community)?node-id=0-1&t=Pw941XrYH5tZ60gR-0
+
+https://www.figma.com/design/gjsPGgNUX8GyCULbzorRCH/Food-Recipe-App-(Community)?node-id=1-3&t=5zRcmNdCyqOxNqsJ-0
