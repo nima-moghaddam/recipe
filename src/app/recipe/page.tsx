@@ -4,6 +4,7 @@ import WarningWrapper from "@/components/WarningWrapper";
 import { getRecipies } from "@/services/getRecipies";
 import { IQueryResponse } from "@/types/Query-Interface";
 import { IRecipe } from "@/types/Recipe-Interface";
+import GridWrapper from "@/components/GridWrapper";
 
 export default async function Home({
   searchParams,
@@ -25,11 +26,11 @@ export default async function Home({
         <Search />
       </div>
       <WarningWrapper message="No recipe found!" hasData={!!recipies?.length}>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-7">
+        <GridWrapper>
           {recipies?.map((recipe: IRecipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
-        </div>
+        </GridWrapper>
       </WarningWrapper>
     </section>
   );

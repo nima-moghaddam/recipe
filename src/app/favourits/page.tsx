@@ -1,4 +1,5 @@
 "use client";
+import GridWrapper from "@/components/GridWrapper";
 import RecipeCard from "@/components/RecipeCard";
 import WarningWrapper from "@/components/WarningWrapper";
 import { IRecipe } from "@/types/Recipe-Interface";
@@ -15,11 +16,11 @@ const Favourits = () => {
         message="Your favourit list is empty!"
         hasData={!!favorList?.length}
       >
-        <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <GridWrapper>
           {favorList?.map((recipe: IRecipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
-        </div>
+        </GridWrapper>
       </WarningWrapper>
     </section>
   );

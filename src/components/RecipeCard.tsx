@@ -39,7 +39,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
   };
 
   return (
-    <div className="overflow-hidden rounded-lg border shadow-lg">
+    <div className="overflow-hidden rounded-2xl border shadow-lg">
       <div className="relative mb-2 pb-[50%]">
         <Image
           alt="image"
@@ -57,6 +57,12 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           />
           <InlineTextIcon icon={<CircleUser />} text={serving + " Serving"} />
         </div>
+        <span
+          className="absolute right-5 top-3 cursor-pointer bg-white flex items-center rounded-full justify-center p-1 bg-opacity-50 backdrop-blur-sm"
+          onClick={handleFavourite}
+        >
+          {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}
+        </span>
       </div>
       <div className="px-3 py-4">
         <p className="mb-1 line-clamp-1 text-xs font-semibold sm:text-xl">
@@ -69,16 +75,6 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           View Recipe
         </Link>
       </div>
-
-      {/* <div className="flex items-center justify-between p-2">
-        <Button name="Details" onClick={handleDetail} />
-        <span
-          className="flex h-5 w-5 cursor-pointer items-center"
-          onClick={handleFavourite}
-        >
-          {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}
-        </span>
-      </div> */}
     </div>
   );
 };

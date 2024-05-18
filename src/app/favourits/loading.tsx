@@ -1,33 +1,35 @@
+import GridWrapper from "@/components/GridWrapper";
+
 export default function Loading() {
   const numArr = Array.from({ length: 12 }, (_, index) => index + 1);
 
   return (
-    <div className="grid gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+    <GridWrapper>
       {numArr.map((num) => (
-        <div className="border shadow-sm rounded" key={num}>
-          <div className="animate-pulse flex flex-col space-x-4">
-            <div className="bg-slate-200 h-24 w-full mb-2"></div>
+        <div className="rounded border shadow-sm" key={num}>
+          <div className="flex animate-pulse flex-col space-x-4">
+            <div className="mb-2 h-24 w-full bg-slate-200"></div>
             <div className="flex-1 space-y-6 py-1 pr-3">
-              <div className="h-2 bg-slate-200 rounded"></div>
+              <div className="h-2 rounded bg-slate-200"></div>
               <div className="space-y-3">
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-                  <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                  <div className="col-span-2 h-2 rounded bg-slate-200"></div>
+                  <div className="col-span-1 h-2 rounded bg-slate-200"></div>
                 </div>
-                <div className="h-2 bg-slate-200 rounded"></div>
-                <div className="h-2 bg-slate-200 rounded"></div>
-                <div className="h-2 bg-slate-200 rounded"></div>
+                <div className="h-2 rounded bg-slate-200"></div>
+                <div className="h-2 rounded bg-slate-200"></div>
+                <div className="h-2 rounded bg-slate-200"></div>
 
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-                  <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-                  <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                  <div className="col-span-1 h-2 rounded bg-slate-200"></div>
+                  <div className="col-span-1 h-2 rounded bg-slate-200"></div>
+                  <div className="col-span-1 h-2 rounded bg-slate-200"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </GridWrapper>
   );
 }
