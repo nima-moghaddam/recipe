@@ -20,10 +20,11 @@ const Button = ({ name, onClick, color = "blue", classes = "" }: IButton) => {
     default:
       break;
   }
+
   return (
     <button
       onClick={onClick}
-      className={`rounded px-2 py-1 text-white text-sm cursor-pointer ${colorClass} ${classes}`}
+      className={`bg-primary-normal hover:bg-primary-dark cursor-pointer rounded px-2 py-1 text-sm text-white ${classes}`}
     >
       {name}
     </button>

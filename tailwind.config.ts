@@ -23,6 +23,14 @@ const config: Config = {
       "2xl": "1200px",
       "3xl": "1300px",
     },
+    colors: {
+      white: "#F3F3F3",
+      secondary: "#FE5E54",
+      primary: {
+        normal: "#F79F1A",
+        dark: "#F89602",
+      },
+    },
   },
   plugins: [],
 };
