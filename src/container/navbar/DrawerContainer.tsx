@@ -1,8 +1,7 @@
 "use client";
 import Drawer from "@/components/Drawer";
 import React, { useState } from "react";
-import NavigationLinks from "./NavigationLinks";
-import MenuSvg from "@/ui/MenuSvg";
+import NavList from "./NavList";
 import IconButton from "@/components/IconButton";
 
 const DrawerContainer = () => {
@@ -11,9 +10,8 @@ const DrawerContainer = () => {
   return (
     <>
       <IconButton icon="menu" onClick={() => setIsOpen(true)} />
-
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-          <NavigationLinks containerClasses="flex flex-col items-end gap-5" />
+        <NavList containerClasses="flex flex-col items-end gap-5" />
       </Drawer>
     </>
   );

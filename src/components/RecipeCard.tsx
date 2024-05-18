@@ -1,5 +1,4 @@
 "use client";
-import { IRecipe } from "@/types/Recipe-Interface";
 import FilledHeartSvg from "@/ui/FilledHeartSvg";
 import Image from "next/image";
 import React from "react";
@@ -8,6 +7,12 @@ import Button from "./Button";
 import OutlineHeartSvg from "@/ui/OutlineHeartSvg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
+import { IRecipe } from "@/types/Recipe-Interface";
+import InlineTextIcon from "./InlineTextIcon";
+import UserSvg from "@/ui/UserSvg";
+import RankSvg from "@/ui/RankSvg";
+import CircleUser from "@/ui/CircleUser";
+import Link from "next/link";
 
 interface IRecipeCard {
   recipe: IRecipe;
@@ -16,6 +21,8 @@ interface IRecipeCard {
 const RecipeCard = ({ recipe }: IRecipeCard) => {
   const { image, label, id, calories, yield: serving } = recipe;
   const router = useRouter();
+
+  console.log(recipe);
 
   const dispatch = useDispatch();
   const { favorList } = useSelector((state: any) => state?.favourit);
@@ -32,8 +39,8 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
   };
 
   return (
-    <div className="border shadow-sm rounded overflow-hidden">
-      <div className="relative mb-2 h-0 pb-[50%]">
+    <div className="overflow-hidden rounded-lg border shadow-lg">
+      <div className="relative mb-2 pb-[50%]">
         <Image
           alt="image"
           src={image}
@@ -42,27 +49,36 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           objectPosition="center"
           sizes="100vw"
         />
+        <div className="absolute bottom-0 flex w-full flex-wrap items-center justify-around bg-white bg-opacity-70 py-2 backdrop-blur-0">
+          <InlineTextIcon
+            icon={<RankSvg />}
+            text={Math.round(calories) + " Kcal"}
+            iconClass="mb-1"
+          />
+          <InlineTextIcon icon={<CircleUser />} text={serving + " Serving"} />
+        </div>
+      </div>
+      <div className="px-3 py-4">
+        <p className="mb-1 line-clamp-1 text-xs font-semibold sm:text-xl">
+          {label}
+        </p>
+        <Link
+          className="underline-offset-3 text-xs text-primary-normal underline"
+          href={`/recipe/${id}`}
+        >
+          View Recipe
+        </Link>
       </div>
 
-      <div className="px-5">
-        <p className="font-semibold line-clamp-1 mb-1 text-center">{label}</p>
-        <div className="text-center">
-          <span className="font-bold mr-1">{Math.round(calories)}</span>
-          <span className="text-sm">kcal</span>
-        </div>
-        <div className="mb-1 text-xs line-clamp-1 text-center">
-          {serving} Serving
-        </div>
-      </div>
-      <div className="flex justify-between items-center p-2">
+      {/* <div className="flex items-center justify-between p-2">
         <Button name="Details" onClick={handleDetail} />
         <span
-          className="w-5 h-5 cursor-pointer flex items-center"
+          className="flex h-5 w-5 cursor-pointer items-center"
           onClick={handleFavourite}
         >
           {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };

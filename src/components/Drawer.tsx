@@ -31,7 +31,6 @@ const Drawer = ({ isOpen, setIsOpen, children }: IDrawer) => {
       <div className="mb-4">
         <IconButton icon="close" onClick={toggleDrawer} />
       </div>
-
       <div onClick={toggleDrawer}>{children}</div>
     </div>
   );

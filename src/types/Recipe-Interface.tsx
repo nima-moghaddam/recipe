@@ -12,15 +12,11 @@ export interface IRecipe {
   totalWeight: number;
   yield: number;
   digest: {
-    daily: number
-    label: string
-    unit: string
+    daily: number;
+    label: string;
+    unit: string;
   }[];
-  images: {
-    SMALL: {
-      url: string;
-    };
-  };
+ 
 }
 
 // ---------- spoonacular  -------------

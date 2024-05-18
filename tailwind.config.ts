@@ -14,24 +14,24 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        white: "#FFFFFF",
+        secondary: "#FE5E54",
+        primary: {
+          normal: "#F79F1A",
+          dark: "#F89602",
+        },
+        green: "#046E1B",
+      },
     },
     screens: {
       xs: "360px",
       sm: "480px",
       md: "768px",
       lg: "992px",
-      xl: "1024px",
+      xl: "1224px",
       "2xl": "1200px",
       "3xl": "1300px",
-    },
-    colors: {
-      white: "#FFFFFF",
-      secondary: "#FE5E54",
-      primary: {
-        normal: "#F79F1A",
-        dark: "#F89602",
-      },
-      green: '#046E1B'
     },
   },
   plugins: [],

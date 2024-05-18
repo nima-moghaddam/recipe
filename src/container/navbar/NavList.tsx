@@ -12,7 +12,7 @@ interface INavigationLinks {
   containerClasses: string;
 }
 
-const NavigationLinks = ({ containerClasses }: INavigationLinks) => {
+const NavList = ({ containerClasses }: INavigationLinks) => {
   return (
     <ul className={containerClasses}>
       {navList.map((item) => (
@@ -30,4 +30,4 @@ const NavigationLinks = ({ containerClasses }: INavigationLinks) => {
   );
 };
 
-export default NavigationLinks;
+export default NavList;

@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import LandingButton from "@/container/LandingButton";
 import BroccliSvg from "@/ui/BroccliSvg";
 import DishSvg from "@/ui/DishSvg";
 import GarlicSvg from "@/ui/GarlicSvg";
@@ -13,13 +13,13 @@ export default async function Home() {
             <p className="mb-1 text-4xl font-bold leading-[3rem]">
               Cooking Made Fun and Easy: Unleash Your Inner Chef
             </p>
-            <p className="mb-3 w-2/3 text-xs font-light md:w-full">
-              Discover more than 10,000 recipes in your hand with the best
-              recipe. Help you to find the easiest way to cook.
+            <p className="mb-3 w-2/3 text-xs font-light">
+              Discover more than{" "}
+              <span className="text-primary-normal">10,000 recipes</span> in
+              your hand with the best recipe. Help you to find the easiest way
+              to cook.
             </p>
-            <div>
-              <Button name="Explore Recipes" classes="py-3 px-5 rounded-lg" />
-            </div>
+            <LandingButton />
           </div>
         </div>
         <div className="hidden w-1/2 md:block">

@@ -1,8 +1,8 @@
 import React from "react";
 import HeaderSvg from "@/ui/HeaderSvg";
 import DrawerContainer from "./DrawerContainer";
-import NavigationLinks from "./NavigationLinks";
 import IconButton from "@/components/IconButton";
+import NavList from "./NavList";
 
 const Navbar = () => {
   return (
@@ -13,7 +13,7 @@ const Navbar = () => {
           <span className="text-green ml-1">Recipedia</span>
         </div>
         <div className="hidden md:block">
-          <NavigationLinks containerClasses="flex items-center" />
+          <NavList containerClasses="flex items-center" />
         </div>
 
         <div className="hidden md:flex md:items-center">
