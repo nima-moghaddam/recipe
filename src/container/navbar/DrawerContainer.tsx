@@ -11,7 +11,7 @@ const DrawerContainer = () => {
     <>
       <IconButton icon="menu" onClick={() => setIsOpen(true)} />
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <NavList containerClasses="flex flex-col items-end gap-5" />
+        <NavList containerClasses="flex flex-col items-center gap-6" />
       </Drawer>
     </>
   );

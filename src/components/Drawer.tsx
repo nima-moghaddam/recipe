@@ -2,6 +2,8 @@
 import useOutsideClick from "@/utils/useOutsideClick";
 import React, { useRef, ReactNode } from "react";
 import IconButton from "./IconButton";
+import Image from "next/image";
+import foodImg from "../../public/icons/fast-food.png";
 
 interface IDrawer {
   isOpen: boolean;
@@ -28,7 +30,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: IDrawer) => {
       ref={drawerRef}
       className={`fixed right-0 top-0 z-40 h-full w-full transform bg-white shadow sm:w-64 ${isOpen ? "translate-x-0" : "translate-x-full"} p-3 transition-transform duration-300 ease-in-out`}
     >
-      <div className="mb-4">
+      <div className="mb-7">
         <IconButton icon="close" onClick={toggleDrawer} />
       </div>
       <div onClick={toggleDrawer}>{children}</div>
