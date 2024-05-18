@@ -30,6 +30,7 @@ const config: Config = {
         normal: "#F79F1A",
         dark: "#F89602",
       },
+      green: '#046E1B'
     },
   },
   plugins: [],
