@@ -1,7 +1,7 @@
 import Badge from "@/components/Badge";
 import { uriPrefix } from "@/enmus/ApiEnum";
 import { getRecipeDetail } from "@/services/getRecipeDetail";
-import { IRecipe } from "@/types/RecipeInterface";
+import { IRecipe } from "@/types/Recipe-Interface";
 import Image from "next/image";
 
 export default async function RecipeDetail({

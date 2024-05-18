@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import BroccliSvg from "@/ui/BroccliSvg";
 import DishSvg from "@/ui/DishSvg";
-import FoodSvg from "@/ui/FoodSvg";
 import GarlicSvg from "@/ui/GarlicSvg";
 import TomatoSvg from "@/ui/TomatoSvg";
 
@@ -28,13 +27,13 @@ export default async function Home() {
             <DishSvg height="500" width="1000" />
           </div>
         </div>
-        <div className="absolute left-[50%] top-10 md:top-5">
+        <div className="absolute left-[45%] top-10 md:top-10">
           <TomatoSvg />
         </div>
         <div className="absolute bottom-[-50%] right-[10%] md:bottom-5">
           <BroccliSvg />
         </div>
-        <div className="absolute bottom-[-50%] left-[10%] md:bottom-7 md:left-[45%]">
+        <div className="absolute bottom-[-50%] left-[10%] md:bottom-7 md:left-[30%]">
           <GarlicSvg />
         </div>
       </div>

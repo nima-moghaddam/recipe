@@ -1,5 +1,5 @@
 "use client";
-import { IRecipe } from "@/types/RecipeInterface";
+import { IRecipe } from "@/types/Recipe-Interface";
 import FilledHeartSvg from "@/ui/FilledHeartSvg";
 import Image from "next/image";
 import React from "react";

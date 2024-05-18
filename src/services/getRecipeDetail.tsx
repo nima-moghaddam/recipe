@@ -1,4 +1,4 @@
-import { baseUrl, apiKey, appId } from "@/enmus/ApiEnum";
+import { baseUrl, apiKey, appId } from "@/enmus/Api-Enum";
 
 export const getRecipeDetail = async (id: string) => {
   try {

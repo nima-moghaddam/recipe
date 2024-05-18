@@ -1,8 +1,8 @@
 import RecipeCard from "@/components/RecipeCard";
 import WarningWrapper from "@/components/WarningWrapper";
 import { getRecipies } from "@/services/getRecipies";
-import { IQueryResponse } from "@/types/QueryInterface";
-import { IRecipe } from "@/types/RecipeInterface";
+import { IQueryResponse } from "@/types/Query-Interface";
+import { IRecipe } from "@/types/Recipe-Interface";
 
 export default async function Home({
   searchParams,

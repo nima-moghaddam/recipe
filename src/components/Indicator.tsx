@@ -6,7 +6,7 @@ const Indicator = () => {
   const { favorList } = useSelector((state: any) => state?.favourit);
 
   return (
-    <span className="absolute bg-red-600 text-white rounded-full text-[8px] px-1 text-center bottom-4 right-[-8px]">
+    <span className="bg-primary-normal absolute bottom-4 right-[0px] rounded-full px-1 text-center text-[8px] text-white">
       {favorList.length}
     </span>
   );

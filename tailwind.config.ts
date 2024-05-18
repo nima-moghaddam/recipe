@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/container/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -24,7 +25,7 @@ const config: Config = {
       "3xl": "1300px",
     },
     colors: {
-      white: "#F3F3F3",
+      white: "#FFFFFF",
       secondary: "#FE5E54",
       primary: {
         normal: "#F79F1A",

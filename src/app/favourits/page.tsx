@@ -1,7 +1,7 @@
 "use client";
 import RecipeCard from "@/components/RecipeCard";
 import WarningWrapper from "@/components/WarningWrapper";
-import { IRecipe } from "@/types/RecipeInterface";
+import { IRecipe } from "@/types/Recipe-Interface";
 import React from "react";
 import { useSelector } from "react-redux";
 

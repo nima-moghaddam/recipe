@@ -1,4 +1,4 @@
-import { baseUrl, apiKey, appId, uriPrefix } from "@/enmus/ApiEnum";
+import { baseUrl, apiKey, appId, uriPrefix } from "@/enmus/Api-Enum";
 
 export const getRecipies = async (query: string) => {
   try {

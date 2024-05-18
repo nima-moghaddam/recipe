@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IRecipe } from "@/types/RecipeInterface";
+import { IRecipe } from "@/types/Recipe-Interface";
 
 export interface IFavourit {
   favorList: IRecipe[];
