@@ -6,7 +6,7 @@ import { IQueryResponse } from "@/types/Query-Interface";
 import { IRecipe } from "@/types/Recipe-Interface";
 import GridWrapper from "@/components/GridWrapper";
 
-export default async function Home({
+export default async function RecipeSearchPage({
   searchParams,
 }: {
   searchParams: { query: string };

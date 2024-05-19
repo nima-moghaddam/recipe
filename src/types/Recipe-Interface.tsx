@@ -26,8 +26,9 @@ export interface IRecipe {
   yield: number;
   totalCO2Emissions: number;
   healthLabels: string[];
-  shareAs?:string
-  cautions?: string[]
+  shareAs?: string;
+  cautions?: string[];
+  source: string;
 
   digest: {
     daily: number;

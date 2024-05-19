@@ -2,7 +2,6 @@
 import FilledHeartSvg from "@/ui/FilledHeartSvg";
 import Image from "next/image";
 import React from "react";
-import { useRouter } from "next/navigation";
 import OutlineHeartSvg from "@/ui/OutlineHeartSvg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
@@ -19,19 +18,18 @@ interface IRecipeCard {
 const RecipeCard = ({ recipe }: IRecipeCard) => {
   const { image, label, id, calories, yield: serving } = recipe;
 
-  
   const dispatch = useDispatch();
   const { favorList } = useSelector((state: any) => state?.favourit);
-  
+
   const isFavourite = favorList?.some((item: IRecipe) => item.id === id);
-  
+
   const handleFavourite = () => {
     if (isFavourite) dispatch(removeFavourit(id));
     else dispatch(addFavourit(recipe));
   };
-  
+
   console.log(recipe);
-  
+
   return (
     <div className="overflow-hidden rounded-2xl border shadow-lg">
       <div className="relative mb-2 pb-[50%]">
@@ -52,7 +50,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           <InlineTextIcon icon={<CircleUser />} text={serving + " Serving"} />
         </div>
         <span
-          className="absolute right-5 top-3 cursor-pointer bg-white flex items-center rounded-full justify-center p-1 bg-opacity-50 backdrop-blur-sm"
+          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm"
           onClick={handleFavourite}
         >
           {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}

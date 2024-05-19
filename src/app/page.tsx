@@ -1,10 +1,10 @@
-import LandingButton from "@/container/LandingButton";
+import HomeButton from "@/container/home-btn/HomeButton";
 import BroccliSvg from "@/ui/BroccliSvg";
 import DishSvg from "@/ui/DishSvg";
 import GarlicSvg from "@/ui/GarlicSvg";
 import TomatoSvg from "@/ui/TomatoSvg";
 
-export default async function Home() {
+export default async function HomePage() {
   return (
     <section>
       <div className="relative flex h-full px-5 md:px-7 lg:px-[10%]">
@@ -19,7 +19,7 @@ export default async function Home() {
               your hand with the best recipe. Help you to find the easiest way
               to cook.
             </p>
-            <LandingButton />
+            <HomeButton />
           </div>
         </div>
         <div className="hidden w-1/2 md:block">

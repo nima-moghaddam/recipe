@@ -1,10 +1,11 @@
 import Badge from "@/components/Badge";
+import RecipeDetail from "@/container/recipe-detail";
 import { uriPrefix } from "@/enmus/Api-Enum";
 import { getRecipeDetail } from "@/services/getRecipeDetail";
 import { IRecipe } from "@/types/Recipe-Interface";
 import Image from "next/image";
 
-export default async function RecipeDetail({
+export default async function RecipeDetailPage({
   params,
 }: {
   params: { id: string };
@@ -12,7 +13,6 @@ export default async function RecipeDetail({
   const uri = uriPrefix + params.id;
   const encodedUri = encodeURIComponent(uri);
   const data = await getRecipeDetail(encodedUri);
-
   const recipeDetail: IRecipe = data.hits[0].recipe;
 
   const {
@@ -28,7 +28,8 @@ export default async function RecipeDetail({
 
   return (
     <section>
-      <h1 className="mb-3">Recipe Detail</h1>
+      <RecipeDetail data={recipeDetail} />
+      {/* <h1 className="mb-3">Recipe Detail</h1>
       <div className="border shadow-sm p-5 flex flex-col md:flex-row">
         <div className="w-full md:w-1/4 relative mr-0 mb-2 md:mr-4 md:mb-0">
           <div className="relative h-52 md:h-full">
@@ -99,7 +100,7 @@ export default async function RecipeDetail({
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

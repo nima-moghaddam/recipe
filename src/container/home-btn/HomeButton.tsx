@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const LandingButton = () => {
+const HomeButton = () => {
   const { push } = useRouter();
 
   return (
@@ -15,4 +15,4 @@ const LandingButton = () => {
   );
 };
 
-export default LandingButton;
+export default HomeButton;
