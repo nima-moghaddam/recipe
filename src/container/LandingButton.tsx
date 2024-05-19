@@ -8,7 +8,7 @@ const LandingButton = () => {
 
   return (
     <Button
-      onClick={() => push("/recipe")}
+      onClick={() => push("/recipe?query=general")}
       name="Explore Recipes"
       classes="py-3 px-5 rounded-lg"
     />

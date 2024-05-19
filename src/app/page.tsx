@@ -9,7 +9,7 @@ export default async function Home() {
     <section>
       <div className="relative flex h-full px-5 md:px-7 lg:px-[10%]">
         <div className="w-full text-center md:w-1/2 md:text-left">
-          <div className="mt-[30%] flex h-full flex-col items-center justify-center sm:mt-[20%]  md:mt-0 md:items-start">
+          <div className="mt-[20%] flex h-full flex-col items-center justify-center sm:mt-[20%]  md:mt-0 md:items-start">
             <p className="mb-1 text-4xl font-bold leading-[3rem]">
               Cooking Made Fun and Easy: Unleash Your Inner Chef
             </p>
@@ -27,7 +27,7 @@ export default async function Home() {
             <DishSvg height="500" width="1000" />
           </div>
         </div>
-        <div className="absolute left-[45%] top-10 md:top-10">
+        <div className="absolute left-[35%] top-[0px] md:top-10">
           <TomatoSvg />
         </div>
         <div className="absolute bottom-[-50%] right-[10%] md:bottom-5">
