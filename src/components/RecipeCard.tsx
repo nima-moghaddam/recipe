@@ -3,13 +3,11 @@ import FilledHeartSvg from "@/ui/FilledHeartSvg";
 import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Button from "./Button";
 import OutlineHeartSvg from "@/ui/OutlineHeartSvg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
 import InlineTextIcon from "./InlineTextIcon";
-import UserSvg from "@/ui/UserSvg";
 import RankSvg from "@/ui/RankSvg";
 import CircleUser from "@/ui/CircleUser";
 import Link from "next/link";
@@ -20,24 +18,20 @@ interface IRecipeCard {
 
 const RecipeCard = ({ recipe }: IRecipeCard) => {
   const { image, label, id, calories, yield: serving } = recipe;
-  const router = useRouter();
 
-  console.log(recipe);
-
+  
   const dispatch = useDispatch();
   const { favorList } = useSelector((state: any) => state?.favourit);
-
-  const handleDetail = () => {
-    router.push(`/recipe/${id}`);
-  };
-
+  
   const isFavourite = favorList?.some((item: IRecipe) => item.id === id);
-
+  
   const handleFavourite = () => {
     if (isFavourite) dispatch(removeFavourit(id));
     else dispatch(addFavourit(recipe));
   };
-
+  
+  console.log(recipe);
+  
   return (
     <div className="overflow-hidden rounded-2xl border shadow-lg">
       <div className="relative mb-2 pb-[50%]">

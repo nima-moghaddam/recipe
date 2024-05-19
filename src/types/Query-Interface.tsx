@@ -1,3 +1,5 @@
+import { IRecipe } from "./Recipe-Interface";
+
 export interface IQueryResponse {
   from: number;
   to: number;
@@ -16,7 +18,7 @@ export interface Next {
 }
 
 export interface Hit {
-  recipe: Recipe;
+  recipe: IRecipe;
   _links: Links2;
 }
 
