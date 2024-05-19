@@ -1,21 +1,16 @@
 import InlineTextIcon from "@/components/InlineTextIcon";
 import { IRecipe } from "@/types/Recipe-Interface";
-import CalendarSvg from "@/ui/CalendarSvg";
-import CircleUser from "@/ui/CircleUser";
-import LinkSvg from "@/ui/LinkSvg";
-import OutlineCircleUserSvg from "@/ui/OutlineCircleUserSvg";
-import ScaleSvg from "@/ui/ScaleSvg";
 import { formatDateToShortName } from "@/utils/formatDateToShortName";
-import Link from "next/link";
 import React from "react";
 import ToolBar from "./components/ToolBar";
+import SvgIcon from "@/components/SvgIcon";
 
 interface IProps {
-  data: IRecipe;
+  recipe: IRecipe;
 }
 
-const TitleSection = ({ data }: IProps) => {
-  const { label, source, shareAs, totalWeight, id } = data;
+const TitleSection = ({ recipe }: IProps) => {
+  const { label, source, totalWeight } = recipe;
 
   const currentTime = formatDateToShortName(new Date());
 
@@ -25,24 +20,24 @@ const TitleSection = ({ data }: IProps) => {
       <div className="flex w-full justify-between border-b border-slate-300 pb-5">
         <div className="flex flex-wrap">
           <InlineTextIcon
-            icon={<CircleUser />}
+            icon={<SvgIcon name="location" color="green" />}
             text={source}
             textClass="text-black"
             classes="mr-4"
           />
           <InlineTextIcon
-            icon={<CalendarSvg />}
+            icon={<SvgIcon name="calendar" color="green" />}
             text={currentTime}
             textClass="text-black"
             classes="mr-4"
           />
           <InlineTextIcon
-            icon={<ScaleSvg />}
+            icon={<SvgIcon name="scale" color="green" />}
             text={Math.round(totalWeight) + " Kg"}
             textClass="text-black"
           />
         </div>
-        <ToolBar recipe={data} />
+        <ToolBar recipe={recipe} />
       </div>
     </>
   );

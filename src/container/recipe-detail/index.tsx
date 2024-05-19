@@ -2,10 +2,10 @@ import { IRecipe } from "@/types/Recipe-Interface";
 import TitleSection from "./TitleSection";
 
 interface IRecipeDetail {
-  data: IRecipe;
+  recipe: IRecipe;
 }
 
-const RecipeDetail = ({ data }: IRecipeDetail) => {
+const RecipeDetail = ({ recipe }: IRecipeDetail) => {
   const {
     image,
     ingredientLines,
@@ -17,11 +17,11 @@ const RecipeDetail = ({ data }: IRecipeDetail) => {
     mealType,
     source,
     yield: serving,
-  } = data;
+  } = recipe;
 
   return (
     <>
-    <TitleSection data={data} />
+      <TitleSection recipe={recipe} />
     </>
   );
 };

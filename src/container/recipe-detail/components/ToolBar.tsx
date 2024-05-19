@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
 import { useRouter } from "next/navigation";
+import SvgIcon from "@/components/SvgIcon";
 
 interface IProps {
   recipe: IRecipe;
@@ -12,7 +13,6 @@ interface IProps {
 
 const ToolBar = ({ recipe }: IProps) => {
   const router = useRouter();
-
   const dispatch = useDispatch();
   const { favorList } = useSelector((state: any) => state?.favourit);
   const isFavourite = favorList?.some((item: IRecipe) => item.id === recipe.id);
@@ -26,12 +26,20 @@ const ToolBar = ({ recipe }: IProps) => {
     <div className="flex flex-wrap">
       <IconButton
         classes="mr-3"
-        icon={isFavourite ? "heart" : "outline-heart"}
+        icon={
+          isFavourite ? (
+            <SvgIcon name="heart" color="primary" />
+          ) : (
+            <SvgIcon name="outline-heart" color="primary" />
+          )
+        }
         onClick={handleFavourite}
       />
       <IconButton
-        icon={"link"}
-        onClick={() => router.push(recipe?.shareAs || "/")}
+        icon={<SvgIcon name="link" color="primary" />}
+        onClick={() =>
+          router.push(recipe?.shareAs || "https://www.edamam.com/")
+        }
       />
     </div>
   );

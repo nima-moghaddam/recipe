@@ -28,7 +28,7 @@ export default async function RecipeDetailPage({
 
   return (
     <section>
-      <RecipeDetail data={recipeDetail} />
+      <RecipeDetail recipe={recipeDetail} />
       {/* <h1 className="mb-3">Recipe Detail</h1>
       <div className="border shadow-sm p-5 flex flex-col md:flex-row">
         <div className="w-full md:w-1/4 relative mr-0 mb-2 md:mr-4 md:mb-0">

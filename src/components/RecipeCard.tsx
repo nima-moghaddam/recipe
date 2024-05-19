@@ -1,15 +1,12 @@
 "use client";
-import FilledHeartSvg from "@/ui/FilledHeartSvg";
 import Image from "next/image";
 import React from "react";
-import OutlineHeartSvg from "@/ui/OutlineHeartSvg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
 import InlineTextIcon from "./InlineTextIcon";
-import RankSvg from "@/ui/RankSvg";
-import CircleUser from "@/ui/CircleUser";
 import Link from "next/link";
+import SvgIcon from "./SvgIcon";
 
 interface IRecipeCard {
   recipe: IRecipe;
@@ -43,17 +40,24 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
         />
         <div className="absolute bottom-0 flex w-full flex-wrap items-center justify-around bg-white bg-opacity-70 py-2 backdrop-blur-0">
           <InlineTextIcon
-            icon={<RankSvg />}
+            icon={<SvgIcon name="rank" color="green" />}
             text={Math.round(calories) + " Kcal"}
-            iconClass="mb-1"
+            // iconClass="mb-1"
           />
-          <InlineTextIcon icon={<CircleUser />} text={serving + " Serving"} />
+          <InlineTextIcon
+            icon={<SvgIcon name="circle-user" color="green" width={20} height={20} />}
+            text={serving + " Serving"}
+          />
         </div>
         <span
-          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm"
+          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm hover:animate-pulse"
           onClick={handleFavourite}
         >
-          {isFavourite ? <FilledHeartSvg /> : <OutlineHeartSvg />}
+          {isFavourite ? (
+            <SvgIcon name="heart" color="secondary" />
+          ) : (
+            <SvgIcon name="outline-heart" color="secondary" />
+          )}
         </span>
       </div>
       <div className="px-3 py-4">
@@ -61,7 +65,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           {label}
         </p>
         <Link
-          className="underline-offset-3 text-xs text-primary-normal underline"
+          className="underline-offset-3 text-xs text-primary-normal underline hover:text-primary-dark"
           href={`/recipe/${id}`}
         >
           View Recipe

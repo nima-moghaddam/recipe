@@ -18,7 +18,7 @@ const InlineTextIcon = ({
   return (
     <div className={`flex items-center text-green ${classes}`}>
       <span className={`mr-2 ${iconClass}`}>{icon}</span>
-      <span className={`text-center text-xs font-bold ${textClass}`}>
+      <span className={`text-xs font-bold ${textClass}`}>
         {text}
       </span>
     </div>
