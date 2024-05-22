@@ -13,10 +13,29 @@ export interface Images {
   LARGE?: ImageData;
 }
 
-interface INutrients {
+export interface Images {
+  THUMBNAIL?: ImageData;
+  SMALL?: ImageData;
+  REGULAR?: ImageData;
+  LARGE?: ImageData;
+}
+
+export interface INutrients {
   label: string;
   quantity: number;
   unit: string;
+}
+
+export interface ITotalNutrients {
+  ENERC_KCAL?: INutrients;
+  FAT?: INutrients;
+  FASAT?: INutrients;
+  FATRN?: INutrients;
+  FAMS?: INutrients;
+  FAPU?: INutrients;
+  CHOCDF?: INutrients;
+  FIBTG?: INutrients;
+  SUGAR?: INutrients;
 }
 
 export interface IRecipe {
@@ -45,17 +64,7 @@ export interface IRecipe {
 
   images: Images;
 
-  totalNutrients: {
-    ENERC_KCAL?: INutrients;
-    FAT?: INutrients;
-    FASAT?: INutrients;
-    FATRN?: INutrients;
-    FAMS?: INutrients;
-    FAPU?: INutrients;
-    CHOCDF?: INutrients;
-    FIBTG?: INutrients;
-    SUGAR?: INutrients;
-  };
+  totalNutrients: ITotalNutrients;
 
   ingredients: {
     text: string;

@@ -1,3 +1,4 @@
+import { TGlobalColors } from "@/types/GlobalColor-Type";
 import React from "react";
 
 // For more info on icons refer to https://remixicon.com/
@@ -20,7 +21,7 @@ interface ISvgIcon {
     | "location"
     | "scale";
 
-  color?: "green" | "primary" | "secondary" | "black";
+  color?: TGlobalColors
   width?: number;
   height?: number;
 }

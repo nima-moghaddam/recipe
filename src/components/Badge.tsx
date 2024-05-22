@@ -1,29 +1,31 @@
+import { TGlobalColors } from "@/types/GlobalColor-Type";
 import React from "react";
 
 interface IBadge {
   name: string;
-  color?: "blue" | "green" | "purple";
+  color?: TGlobalColors;
   classes?: string;
 }
 
-const Badge = ({ name, color = "blue", classes = "" }: IBadge) => {
-  let colorClass = "bg-blue-300 ";
+const Badge = ({ name, color = "primary", classes = "" }: IBadge) => {
+  let colorClass = "border-primary-normal text-primary-normal";
 
   switch (color) {
     case "green":
-      colorClass = "bg-green-300 ";
+      colorClass = "border-green text-green";
       break;
-    case "purple":
-      colorClass = "bg-purple-300 ";
+    case "secondary":
+      colorClass = "border-secondary text-secondary";
+      break;
+    case "black":
+      colorClass = "border-black text-black";
       break;
     default:
       break;
   }
 
   return (
-    <span className={`px-2 rounded text-white ${colorClass} ${classes}`}>
-      {name}
-    </span>
+    <span className={`rounded px-2 ${colorClass} ${classes}`}>{name}</span>
   );
 };
 

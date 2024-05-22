@@ -1,6 +1,4 @@
 "use client";
-import OptionSvg from "@/ui/OptionSvg";
-import SearchSvg from "@/ui/SearchSvg";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
