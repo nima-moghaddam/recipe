@@ -9,7 +9,7 @@ interface IconButton {
 const IconButton = ({ onClick, icon, classes }: IconButton) => {
   return (
     <button
-      className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded hover:shadow-sm hover:shadow-primary-normal ${classes}`}
+      className={`hover:shadow-primary flex h-8 w-8 cursor-pointer items-center justify-center rounded hover:shadow-sm ${classes}`}
       onClick={onClick}
     >
       {icon}

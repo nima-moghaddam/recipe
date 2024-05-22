@@ -16,12 +16,9 @@ const config: Config = {
       },
       colors: {
         white: "#FFFFFF",
-        secondary: "#FE5E54",
-        primary: {
-          normal: "#F79F1A",
-          dark: "#F89602",
-        },
-        green: "#046E1B",
+        primary: "#F79F1A",
+        secondary: "#046E1B",
+        danger: "#FE5E54",
       },
     },
     screens: {

@@ -14,9 +14,7 @@ const CookingDetail = ({ detailList, cautions, mealTypes }: IProps) => {
       <ul className="mb-5 flex flex-col">
         {detailList.map((item, index) => (
           <li key={index} className="mb-2 flex">
-            <span className="mr-2 font-bold text-primary-normal">
-              {index + 1}-
-            </span>
+            <span className="text-primary mr-2 font-bold">{index + 1}-</span>
             <p>{item}</p>
           </li>
         ))}
@@ -24,14 +22,14 @@ const CookingDetail = ({ detailList, cautions, mealTypes }: IProps) => {
       {!!cautions?.length && (
         <>
           <h3 className="mb-2 font-bold text-black">Cautions</h3>
-          <div className="flex flex-wrap mb-5">
+          <div className="mb-5 flex flex-wrap">
             {cautions.map((item) => (
               <Badge
-                color="green"
+                color="secondary"
                 classes="mr-2 mb-2"
                 name={item}
                 key={item}
-                icon={<SvgIcon name="alert-hexagon" color="green" />}
+                icon={<SvgIcon name="alert-hexagon" color="secondary" />}
               />
             ))}
           </div>

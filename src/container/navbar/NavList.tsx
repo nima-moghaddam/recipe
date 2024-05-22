@@ -19,7 +19,7 @@ const NavList = ({ containerClasses }: INavigationLinks) => {
         <li className="relative" key={item.name}>
           {item.name === "Favourit" && <Indicator />}
           <Link
-            className="hover:text-primary-normal mx-3 cursor-pointer"
+            className="hover:text-primary mx-3 cursor-pointer"
             href={item.url}
           >
             {item.name}

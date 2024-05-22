@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex w-full items-center justify-between px-10">
         <div className="flex items-center">
           <SvgIcon name="dish" color="primary" width={20} height={20} />
-          <span className="ml-1 text-green">Recipedia</span>
+          <span className="ml-1 text-secondary">Recipedia</span>
         </div>
         <div className="hidden md:block">
           <NavList containerClasses="flex items-center" />

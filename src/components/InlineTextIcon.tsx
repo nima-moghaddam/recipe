@@ -16,7 +16,7 @@ const InlineTextIcon = ({
   textClass = "",
 }: InlineTextIcon) => {
   return (
-    <div className={`flex items-center text-green ${classes}`}>
+    <div className={`flex items-center text-secondary ${classes}`}>
       <span className={`mr-2 ${iconClass}`}>{icon}</span>
       <span className={`text-xs font-bold ${textClass}`}>
         {text}

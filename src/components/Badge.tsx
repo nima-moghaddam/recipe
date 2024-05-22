@@ -12,17 +12,17 @@ const Badge = ({ name, color = "primary", classes = "", icon }: IBadge) => {
   let colorClass = "";
 
   switch (color) {
-    case "green":
-      colorClass = "border-green text-green";
-      break;
     case "secondary":
       colorClass = "border-secondary text-secondary";
+      break;
+    case "danger":
+      colorClass = "border-danger text-danger";
       break;
     case "black":
       colorClass = "border-black text-black";
       break;
     default:
-      colorClass = "border-primary-normal text-primary-normal";
+      colorClass = "border-primary text-primary";
       break;
   }
 

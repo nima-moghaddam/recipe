@@ -34,14 +34,14 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
         <ImageHandler image={image} images={images} />
         <div className="absolute bottom-0 flex w-full flex-wrap items-center justify-around bg-white bg-opacity-70 py-2 backdrop-blur-0">
           <InlineTextIcon
-            icon={<SvgIcon name="rank" color="green" />}
+            icon={<SvgIcon name="rank" color="secondary" />}
             text={Math.round(calories) + " Kcal"}
           />
           <InlineTextIcon
             icon={
               <SvgIcon
                 name="circle-user"
-                color="green"
+                color="secondary"
                 width={20}
                 height={20}
               />
@@ -55,7 +55,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
         >
           <SvgIcon
             name={isFavourite ? "heart" : "outline-heart"}
-            color="secondary"
+            color="danger"
             width={25}
             height={25}
           />
@@ -66,7 +66,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           {label}
         </p>
         <Link
-          className="underline-offset-3 text-xs text-primary-normal underline hover:text-primary-dark"
+          className="underline-offset-3 text-primary text-xs underline hover:text-orange-400"
           href={`/recipe/${id}`}
         >
           View Recipe

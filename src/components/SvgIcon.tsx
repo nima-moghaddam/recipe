@@ -38,13 +38,13 @@ const SvgIcon = ({
   let iconColor = "";
 
   switch (color) {
-    case "green":
-      iconColor = "#046E1B";
-      break;
     case "primary":
       iconColor = "#F79F1A";
       break;
     case "secondary":
+      iconColor = "#046E1B";
+      break;
+    case "danger":
       iconColor = "#FE5E54";
       break;
     default:

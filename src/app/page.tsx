@@ -15,7 +15,7 @@ export default async function HomePage() {
             </p>
             <p className="mb-3 w-2/3 text-xs font-light">
               Discover more than{" "}
-              <span className="text-primary-normal">10,000 recipes</span> in
+              <span className="text-primary">10,000 recipes</span> in
               your hand with the best recipe. Help you to find the easiest way
               to cook.
             </p>

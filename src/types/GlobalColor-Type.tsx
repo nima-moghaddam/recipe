@@ -1,1 +1,1 @@
-export type TGlobalColors = "green" | "primary" | "secondary" | "black";
+export type TGlobalColors = "secondary" | "primary" | "danger" | "black";

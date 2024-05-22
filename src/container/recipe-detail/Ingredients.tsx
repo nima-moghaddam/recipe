@@ -1,12 +1,14 @@
+"use client";
 import { IngredientsFormat } from "@/types/Recipe-Interface";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 interface IProps {
   ingredients: IngredientsFormat[];
 }
 
 const Ingredients = ({ ingredients }: IProps) => {
+  const []= useState()
   return (
     <div className="flex flex-col">
       {ingredients.map((item) => (
