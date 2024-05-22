@@ -23,10 +23,9 @@ export default function Error({
         <Button
           name="Back to Homepage"
           onClick={() => router.push("/")}
-          color="red"
           classes="mr-2"
         />
-        <Button name="Retry" onClick={() => reset()} color="blue" />
+        <Button name="Retry" onClick={() => reset()} color="danger" />
       </div>
     </div>
   );
