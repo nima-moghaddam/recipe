@@ -38,6 +38,17 @@ export interface ITotalNutrients {
   SUGAR?: INutrients;
 }
 
+export interface IngredientsFormat {
+  text: string;
+  quantity: number;
+  measure?: string;
+  food: string;
+  weight: number;
+  foodCategory: string;
+  foodId: string;
+  image?: string;
+}
+
 export interface IRecipe {
   id?: string;
   uri?: string;
@@ -55,25 +66,13 @@ export interface IRecipe {
   shareAs?: string;
   cautions?: string[];
   source: string;
+  images: Images;
+  totalNutrients: ITotalNutrients;
+  ingredients: IngredientsFormat[];
 
   digest: {
     daily: number;
     label: string;
     unit: string;
-  }[];
-
-  images: Images;
-
-  totalNutrients: ITotalNutrients;
-
-  ingredients: {
-    text: string;
-    quantity: number;
-    measure?: string;
-    food: string;
-    weight: number;
-    foodCategory: string;
-    foodId: string;
-    image?: string;
   }[];
 }
