@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import foodBg from "../../public/overlay/404-notfound.jpg";
 import { Images } from "@/types/Recipe-Interface";
 

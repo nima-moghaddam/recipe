@@ -6,17 +6,29 @@ interface IButton {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   color?: TGlobalColors;
   classes?: string;
+  size?: "sm" | "lg";
+  disabled?: boolean;
 }
 
-const Button = ({ name, onClick, color = "primary", classes = "" }: IButton) => {
-  let colorClass = "bg-primary hover:bg-orange-600";
+const Button = ({
+  name,
+  onClick,
+  color = "primary",
+  classes = "",
+  size = "sm",
+  disabled = false,
+}: IButton) => {
+  let bgColor = "bg-primary hover:bg-orange-400";
 
   switch (color) {
     case "danger":
-      colorClass = "bg-danger hover:bg-red-600";
+      bgColor = "bg-danger hover:bg-red-500";
       break;
     case "secondary":
-      colorClass = "bg-danger hover:bg-purple-600";
+      bgColor = "bg-secondary hover:bg-green-700";
+      break;
+    case "black":
+      bgColor = "bg-black";
       break;
     default:
       break;
@@ -25,7 +37,8 @@ const Button = ({ name, onClick, color = "primary", classes = "" }: IButton) => 
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer rounded bg-primary px-2 py-1 text-sm text-white hover:bg-primary-dark ${classes}`}
+      disabled={disabled}
+      className={`cursor-pointer rounded text-center text-sm  text-white ${size === "sm" ? "px-2 py-2" : "px-4 py-3"} ${bgColor}  ${classes}`}
     >
       {name}
     </button>

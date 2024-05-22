@@ -10,7 +10,6 @@ const HomeButton = () => {
     <Button
       onClick={() => push("/recipe?query=general")}
       name="Explore Recipes"
-      classes="py-3 px-5 rounded-lg"
     />
   );
 };
