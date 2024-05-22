@@ -17,7 +17,7 @@ const TitleSection = ({ recipe }: IProps) => {
   return (
     <>
       <h1 className="mb-3 text-3xl font-bold">{label}</h1>
-      <div className="flex w-full justify-between border-b border-slate-300 pb-5">
+      <div className="flex w-full justify-between border-b border-slate-300 pb-5 mb-5">
         <div className="flex flex-wrap">
           <InlineTextIcon
             icon={<SvgIcon name="location" color="green" />}

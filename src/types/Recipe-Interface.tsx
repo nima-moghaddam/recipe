@@ -1,9 +1,16 @@
 // ---------- edamam  -------------
 
-interface Image {
+interface ImageData {
   url: string;
   width: number;
   height: number;
+}
+
+export interface Images {
+  THUMBNAIL?: ImageData;
+  SMALL?: ImageData;
+  REGULAR?: ImageData;
+  LARGE?: ImageData;
 }
 
 interface INutrients {
@@ -36,12 +43,7 @@ export interface IRecipe {
     unit: string;
   }[];
 
-  images: {
-    THUMBNAIL?: Image;
-    SMALL?: Image;
-    REGULAR?: Image;
-    LARGE?: Image;
-  };
+  images: Images;
 
   totalNutrients: {
     ENERC_KCAL?: INutrients;

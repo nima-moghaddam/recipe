@@ -7,13 +7,14 @@ import { IRecipe } from "@/types/Recipe-Interface";
 import InlineTextIcon from "./InlineTextIcon";
 import Link from "next/link";
 import SvgIcon from "./SvgIcon";
+import ImageHandler from "./ImageHandler";
 
 interface IRecipeCard {
   recipe: IRecipe;
 }
 
 const RecipeCard = ({ recipe }: IRecipeCard) => {
-  const { image, label, id, calories, yield: serving } = recipe;
+  const { image, images, label, id, calories, yield: serving } = recipe;
 
   const dispatch = useDispatch();
   const { favorList } = useSelector((state: any) => state?.favourit);
@@ -25,19 +26,12 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
     else dispatch(addFavourit(recipe));
   };
 
-  console.log(recipe);
+  // console.log(recipe);
 
   return (
     <div className="overflow-hidden rounded-2xl border shadow-lg">
       <div className="relative mb-2 pb-[50%]">
-        <Image
-          alt="image"
-          src={image}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          sizes="100vw"
-        />
+        <ImageHandler image={image} images={images} />
         <div className="absolute bottom-0 flex w-full flex-wrap items-center justify-around bg-white bg-opacity-70 py-2 backdrop-blur-0">
           <InlineTextIcon
             icon={<SvgIcon name="rank" color="green" />}
@@ -56,7 +50,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           />
         </div>
         <span
-          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm"
+          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-70 p-1 backdrop-blur-sm"
           onClick={handleFavourite}
         >
           <SvgIcon
