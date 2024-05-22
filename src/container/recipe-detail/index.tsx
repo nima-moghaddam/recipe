@@ -11,8 +11,16 @@ interface IRecipeDetail {
 }
 
 const RecipeDetail = ({ recipe }: IRecipeDetail) => {
-  const { image, totalNutrients, images, ingredients, ingredientLines } =
-    recipe;
+  const {
+    image,
+    totalNutrients,
+    images,
+    ingredients,
+    ingredientLines,
+    cautions,
+    mealType,
+    cuisineType,
+  } = recipe;
 
   return (
     <>
@@ -24,14 +32,18 @@ const RecipeDetail = ({ recipe }: IRecipeDetail) => {
         <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <TotalNutrients nutrients={totalNutrients} />
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <HealthLabels recipe={recipe} />
         </div>
         <div className="col-span-12 md:col-span-6 lg:col-span-8">
           <Ingredients ingredients={ingredients} />
         </div>
         <div className="col-span-12 md:col-span-6 lg:col-span-4">
-          <CookingDetail detailList={ingredientLines} />
+          <CookingDetail
+            detailList={ingredientLines}
+            cautions={cautions}
+            mealTypes={[...mealType, ...cuisineType]}
+          />
         </div>
       </div>
     </>

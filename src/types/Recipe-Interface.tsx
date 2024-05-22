@@ -69,6 +69,7 @@ export interface IRecipe {
   images: Images;
   totalNutrients: ITotalNutrients;
   ingredients: IngredientsFormat[];
+  cuisineType: string[];
 
   digest: {
     daily: number;
