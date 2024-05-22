@@ -8,7 +8,7 @@ interface IBadge {
 }
 
 const Badge = ({ name, color = "primary", classes = "" }: IBadge) => {
-  let colorClass = "border-primary-normal text-primary-normal";
+  let colorClass = "";
 
   switch (color) {
     case "green":
@@ -21,11 +21,14 @@ const Badge = ({ name, color = "primary", classes = "" }: IBadge) => {
       colorClass = "border-black text-black";
       break;
     default:
+      colorClass = "border-primary-normal text-primary-normal";
       break;
   }
 
   return (
-    <span className={`rounded px-2 ${colorClass} ${classes}`}>{name}</span>
+    <span className={`rounded border px-2 ${colorClass} ${classes}`}>
+      {name}
+    </span>
   );
 };
 

@@ -20,19 +20,19 @@ const TitleSection = ({ recipe }: IProps) => {
       <div className="flex w-full justify-between border-b border-slate-300 pb-5 mb-5">
         <div className="flex flex-wrap">
           <InlineTextIcon
-            icon={<SvgIcon name="location" color="green" />}
+            icon={<SvgIcon name="location" color="primary" />}
             text={source}
             textClass="text-black"
             classes="mr-4"
           />
           <InlineTextIcon
-            icon={<SvgIcon name="calendar" color="green" />}
+            icon={<SvgIcon name="calendar" color="primary" />}
             text={currentTime}
             textClass="text-black"
             classes="mr-4"
           />
           <InlineTextIcon
-            icon={<SvgIcon name="scale" color="green" />}
+            icon={<SvgIcon name="scale" color="primary" />}
             text={Math.round(totalWeight) + " Kg"}
             textClass="text-black"
           />
