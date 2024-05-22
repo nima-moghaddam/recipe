@@ -42,22 +42,29 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           <InlineTextIcon
             icon={<SvgIcon name="rank" color="green" />}
             text={Math.round(calories) + " Kcal"}
-            // iconClass="mb-1"
           />
           <InlineTextIcon
-            icon={<SvgIcon name="circle-user" color="green" width={20} height={20} />}
+            icon={
+              <SvgIcon
+                name="circle-user"
+                color="green"
+                width={20}
+                height={20}
+              />
+            }
             text={serving + " Serving"}
           />
         </div>
         <span
-          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm hover:animate-pulse"
+          className="absolute right-5 top-3 flex cursor-pointer items-center justify-center rounded-full bg-white bg-opacity-50 p-1 backdrop-blur-sm"
           onClick={handleFavourite}
         >
-          {isFavourite ? (
-            <SvgIcon name="heart" color="secondary" />
-          ) : (
-            <SvgIcon name="outline-heart" color="secondary" />
-          )}
+          <SvgIcon
+            name={isFavourite ? "heart" : "outline-heart"}
+            color="secondary"
+            width={25}
+            height={25}
+          />
         </span>
       </div>
       <div className="px-3 py-4">

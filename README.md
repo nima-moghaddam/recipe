@@ -98,4 +98,4 @@ https://www.figma.com/design/Yk69jYZELaUJ3ixEbpe5QS/Recipedia---Landing-Page-(Co
 
 https://www.figma.com/design/gjsPGgNUX8GyCULbzorRCH/Food-Recipe-App-(Community)?node-id=1-3&t=5zRcmNdCyqOxNqsJ-0
 
-https://www.figma.com/design/Yk69jYZELaUJ3ixEbpe5QS/Recipedia---Landing-Page-(Community)?node-id=0-1&t=00SCeBaUDFb6Ac5p-0
+https://www.figma.com/design/i0BDdPaSakl3zqRHRmnx8O/food-Recipe-Website-Ui-Kit-(Community)?node-id=1-57&t=NUxIGimLEgDKaXKd-0

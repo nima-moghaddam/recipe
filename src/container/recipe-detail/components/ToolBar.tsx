@@ -14,6 +14,7 @@ interface IProps {
 const ToolBar = ({ recipe }: IProps) => {
   const router = useRouter();
   const dispatch = useDispatch();
+  
   const { favorList } = useSelector((state: any) => state?.favourit);
   const isFavourite = favorList?.some((item: IRecipe) => item.id === recipe.id);
 
@@ -27,18 +28,20 @@ const ToolBar = ({ recipe }: IProps) => {
       <IconButton
         classes="mr-3"
         icon={
-          isFavourite ? (
-            <SvgIcon name="heart" color="primary" />
-          ) : (
-            <SvgIcon name="outline-heart" color="primary" />
-          )
+          <SvgIcon
+            name={isFavourite ? "heart" : "outline-heart"}
+            color="primary"
+            width={25}
+            height={25}
+          />
         }
         onClick={handleFavourite}
       />
       <IconButton
-        icon={<SvgIcon name="link" color="primary" />}
+        icon={<SvgIcon name="link" color="primary" width={25} height={25} />}
         onClick={() =>
-          router.push(recipe?.shareAs || "https://www.edamam.com/")
+          // router.push(recipe?.shareAs || "https://www.edamam.com/")
+          window.open(recipe?.shareAs || "https://www.edamam.com/")
         }
       />
     </div>
