@@ -20,7 +20,7 @@ const Ingredients = ({ ingredients }: IProps) => {
     setViewMoreStatus((prev) => !prev);
     if (btnRef.current) {
       setTimeout(() => {
-        btnRef!.current!.scrollIntoView({ behavior: "smooth", block: "start" });
+        btnRef!.current!.scrollIntoView({ behavior: "smooth", block: "end" });
       }, 500);
     }
   };

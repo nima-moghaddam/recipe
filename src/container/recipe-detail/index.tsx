@@ -5,6 +5,7 @@ import TotalNutrients from "./TotalNutrients";
 import HealthLabels from "./HealthLabels";
 import Ingredients from "./Ingredients";
 import CookingDetail from "./CookingDetail";
+import DigestChart from "./DigestChart";
 
 interface IRecipeDetail {
   recipe: IRecipe;
@@ -20,6 +21,7 @@ const RecipeDetail = ({ recipe }: IRecipeDetail) => {
     cautions,
     mealType,
     cuisineType,
+    digest,
   } = recipe;
 
   return (
@@ -44,6 +46,9 @@ const RecipeDetail = ({ recipe }: IRecipeDetail) => {
             cautions={cautions}
             mealTypes={[...mealType, ...cuisineType]}
           />
+        </div>
+        <div className="col-span-12">
+          <DigestChart digests={digest} />
         </div>
       </div>
     </>

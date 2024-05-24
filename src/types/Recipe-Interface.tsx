@@ -38,6 +38,26 @@ export interface ITotalNutrients {
   SUGAR?: INutrients;
 }
 
+interface ISubDigest {
+  label: string;
+  tag: string;
+  schemaOrgTag?: string;
+  total: number;
+  hasRDI: boolean;
+  daily: number;
+  unit: string;
+}
+export interface IDigest {
+  label: string;
+  tag: string;
+  schemaOrgTag?: string;
+  total: number;
+  hasRDI: boolean;
+  daily: number;
+  unit: string;
+  sub?: ISubDigest[];
+}
+
 export interface IngredientsFormat {
   text: string;
   quantity: number;
@@ -70,10 +90,5 @@ export interface IRecipe {
   totalNutrients: ITotalNutrients;
   ingredients: IngredientsFormat[];
   cuisineType: string[];
-
-  digest: {
-    daily: number;
-    label: string;
-    unit: string;
-  }[];
+  digest: IDigest[];
 }
