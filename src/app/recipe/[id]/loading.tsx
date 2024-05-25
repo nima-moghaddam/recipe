@@ -1,99 +1,87 @@
 export default function Loading() {
+  const arr20 = Array.from({ length: 20 }, (_, index) => index + 1);
+  const arr10 = Array.from({ length: 10 }, (_, index) => index + 1);
+  const arr5 = Array.from({ length: 5 }, (_, index) => index + 1);
+
   return (
-    <div className="border shadow-sm rounded  p-5">
-      <div className="animate-pulse flex space-x-4">
-        <div className="bg-slate-200  w-1/4"></div>
-        <div className="flex-1 space-y-6 py-1">
-          <div className="h-2 bg-slate-200 rounded"></div>
-          <div className="space-y-3 py-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="h-2 bg-slate-200 rounded"></div>
-            <div className="h-2 bg-slate-200 rounded"></div>
-            <div className="h-2 bg-slate-200 rounded"></div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-6 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
-            <div className="grid grid-cols-4 gap-8">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-            </div>
+    <div className="animate-pulse">
+      <div className="mb-3 h-8 w-1/6 rounded bg-slate-200"></div>
+      <div className="mb-5 flex w-full justify-between border-b border-slate-200 pb-7">
+        <div className="flex flex-wrap">
+          <div className="mb-2 mr-2 h-7 w-32 rounded bg-slate-200"></div>
+          <div className="mb-2 mr-2 h-7 w-32 rounded bg-slate-200"></div>
+          <div className="mb-2 mr-2 h-7 w-32 rounded bg-slate-200"></div>
+          <div className="mb-2 mr-2 h-7 w-32 rounded bg-slate-200"></div>
+        </div>
+        <div className="flex flex-wrap">
+          <div className="mb-2 mr-2 h-7 w-7 rounded bg-slate-200"></div>
+          <div className="mr-2 h-7 w-7 rounded bg-slate-200"></div>
+        </div>
+      </div>
+      <div className="grid grid-cols-12 gap-5 md:gap-8">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4">
+          <div className="h-[400px] w-full rounded bg-slate-200"></div>
+        </div>
+        <div className="col-span-12 md:col-span-6 lg:col-span-4">
+          <div className="h-[400px] w-full rounded bg-slate-200"></div>
+        </div>
+        <div className="col-span-12 lg:col-span-4">
+          <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
+          <div className="mb-10 flex flex-wrap border-b border-slate-200 pb-5">
+            {arr20.map((num) => (
+              <div
+                key={num}
+                className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"
+              ></div>
+            ))}
           </div>
+          <div className="flex items-center justify-center">
+            <div className="mb-2 mr-2 h-14 w-32 rounded bg-slate-200"></div>
+            <div className="mb-2 mr-2 h-14 w-32 rounded bg-slate-200"></div>
+            <div className="mb-2 mr-2 h-14 w-32 rounded bg-slate-200"></div>
+          </div>
+        </div>
+        <div className="col-span-12 md:col-span-6 lg:col-span-8">
+          {arr5.map((num) => (
+            <div
+              key={num}
+              className="mb-5 h-24 w-full rounded bg-slate-200"
+            ></div>
+          ))}
+        </div>
+        <div className="col-span-12 mb-5 md:col-span-6 lg:col-span-4">
+          <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
+          <div className="mb-5">
+            {arr10.map((num) => (
+              <div
+                key={num}
+                className="mb-5 h-4 w-full rounded bg-slate-200"
+              ></div>
+            ))}
+          </div>
+          <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
+          <div className="flex flex-wrap">
+            <div className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"></div>{" "}
+            <div className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"></div>{" "}
+            <div className="mb-5 mr-2 h-7 w-24 rounded bg-slate-200"></div>
+          </div>
+          <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
+
+          <div className="flex flex-wrap">
+            <div className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"></div>{" "}
+            <div className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"></div>{" "}
+            <div className="mb-5 mr-2 h-7 w-24 rounded bg-slate-200"></div>
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
+          <div className="mb-5 h-4 w-2/6 rounded bg-slate-200"></div>
+          <div className="flex items-center justify-center">
+            <div className="h-[300px] w-[300px] rounded-full bg-slate-200"></div>
+          </div>
+        </div>
+        <div className="col-span-12 flex items-center justify-center lg:col-span-6">
+          <div className="mt-10 h-[300px] w-full rounded bg-slate-200"></div>
         </div>
       </div>
     </div>

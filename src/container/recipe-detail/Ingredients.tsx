@@ -20,8 +20,6 @@ const Ingredients = ({ ingredients }: IProps) => {
   const { viewMoreStatus } = useSelector((state: IRootState) => state.viewMore);
   const btnRef = useRef<HTMLDivElement>(null);
 
-  console.log(viewMoreStatus);
-
   const handleViewMore = () => {
     dispatch(toggleViewMore());
     if (btnRef.current) {
