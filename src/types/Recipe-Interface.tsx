@@ -38,7 +38,7 @@ export interface ITotalNutrients {
   SUGAR?: INutrients;
 }
 
-interface ISubDigest {
+export interface ISubDigest {
   label: string;
   tag: string;
   schemaOrgTag?: string;

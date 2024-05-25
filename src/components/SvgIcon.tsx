@@ -21,6 +21,7 @@ interface ISvgIcon {
     | "location"
     | "scale"
     | "restaurant"
+    | "check"
     | "alert-hexagon";
 
   color?: TGlobalColors;
@@ -137,6 +138,11 @@ const SvgIcon = ({
     case "restaurant":
       svgPath = (
         <path d="M21 2V22H19V15H15V8C15 4.68629 17.6863 2 21 2ZM19 4.53C18.17 5 17 6.17 17 8V13H19V4.53ZM9 13.9V22H7V13.9C4.71776 13.4367 3 11.419 3 9V3H5V10H7V3H9V10H11V3H13V9C13 11.419 11.2822 13.4367 9 13.9Z"></path>
+      );
+      break;
+    case "check":
+      svgPath = (
+        <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path>
       );
       break;
     default:

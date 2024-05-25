@@ -5,7 +5,10 @@ import TotalNutrients from "./TotalNutrients";
 import HealthLabels from "./HealthLabels";
 import Ingredients from "./Ingredients";
 import CookingDetail from "./CookingDetail";
-import DigestChart from "./DigestChart";
+// import DigestChart from "./DigestChart";
+import dynamic from "next/dynamic";
+
+const DigestChart = dynamic(() => import("./DigestChart"), { ssr: false });
 
 interface IRecipeDetail {
   recipe: IRecipe;
@@ -40,7 +43,7 @@ const RecipeDetail = ({ recipe }: IRecipeDetail) => {
         <div className="col-span-12 md:col-span-6 lg:col-span-8">
           <Ingredients ingredients={ingredients} />
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 mb-5">
           <CookingDetail
             detailList={ingredientLines}
             cautions={cautions}
