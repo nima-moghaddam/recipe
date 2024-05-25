@@ -69,8 +69,8 @@ const DigestChart = ({ digests }: IProps) => {
       <div className="mb-5 text-xs">
         For more info on each digest click on chart segments.
       </div>
-      <div className="flex flex-col lg:flex-row">
-        <div className="relative mb-[50px] h-[300px] w-full lg:mb-0">
+      <div className="flex flex-col md:flex-row">
+        <div className="relative mb-[50px] h-[300px] w-full md:mb-0">
           <PieChart
             data={chartData}
             label={({ dataEntry }) => dataEntry.title}
@@ -88,14 +88,14 @@ const DigestChart = ({ digests }: IProps) => {
             onMouseOut={() => setHovered(null)}
           />
         </div>
-        <div className="flex min-h-[400px] w-full flex-col items-center">
-          <table className="mb-5 w-[350px] table-auto border-collapse border border-orange-400 lg:w-[400px]">
+        <div className="flex min-h-[200px] w-full flex-col items-center">
+          <table className="mb-5 w-[300px] table-auto border-collapse border border-orange-400 lg:w-[400px]">
             <thead>
               <tr>
                 {tableHeader.map((item) => (
                   <th
                     key={item}
-                    className="border border-orange-300 bg-orange-100 px-5 py-2 font-bold text-primary lg:px-10"
+                    className="border border-orange-300 bg-orange-100 px-3 py-2 font-bold text-primary lg:px-10"
                   >
                     {item}
                   </th>
@@ -117,7 +117,7 @@ const DigestChart = ({ digests }: IProps) => {
                   <tr key={item.tag}>
                     {item.tableRowData.map((i, index) => (
                       <td
-                        className={`border border-orange-300 px-5 py-5 text-center ${index === 1 || index === 2 ? "font-bold" : ""}`}
+                        className={`border border-orange-300 px-3 py-5 text-center lg:px-5 ${index === 1 || index === 2 ? "font-bold" : ""}`}
                         key={index}
                       >
                         <div className="flex w-full items-center justify-center">
