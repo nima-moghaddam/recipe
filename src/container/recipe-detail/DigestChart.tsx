@@ -64,71 +64,75 @@ const DigestChart = ({ digests }: IProps) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="relative mb-[100px] h-[300px] w-full lg:mb-0">
-        <h3 className="font-bold">Daily Digest Chart</h3>
-        <div className="mb-5 text-xs">
-          For more info on each digest click on chart segments.
+    <>
+      <h3 className="font-bold">Daily Digest Chart</h3>
+      <div className="mb-5 text-xs">
+        For more info on each digest click on chart segments.
+      </div>
+      <div className="flex flex-col lg:flex-row">
+        <div className="relative mb-[50px] h-[300px] w-full lg:mb-0">
+          <PieChart
+            data={chartData}
+            label={({ dataEntry }) => dataEntry.title}
+            viewBoxSize={[100, 100]}
+            labelPosition={70}
+            radius={50}
+            className="h-full w-full cursor-pointer text-[0.2rem] font-bold"
+            animate
+            onClick={handleClick}
+            segmentsStyle={(index) => ({
+              transition: "opacity 0.2s",
+              opacity: hovered === index ? 0.3 : 1,
+            })}
+            onMouseOver={(_, index) => setHovered(index)}
+            onMouseOut={() => setHovered(null)}
+          />
         </div>
-        <PieChart
-          data={chartData}
-          label={({ dataEntry }) => dataEntry.title}
-          viewBoxSize={[100, 100]}
-          labelPosition={70}
-          radius={50}
-          className="h-full w-full cursor-pointer text-[0.2rem] font-bold"
-          animate
-          onClick={handleClick}
-          segmentsStyle={(index) => ({
-            transition: "opacity 0.2s",
-            opacity: hovered === index ? 0.3 : 1,
-          })}
-          onMouseOver={(_, index) => setHovered(index)}
-          onMouseOut={() => setHovered(null)}
-        />
-      </div>
-      <div className="flex w-full flex-col items-center">
-        <table className="mb-5 min-w-[400px] table-auto border-collapse border border-orange-400">
-          <thead>
-            <tr>
-              {tableHeader.map((item) => (
-                <th
-                  key={item}
-                  className="border border-orange-300 bg-orange-100 px-10 py-2 font-bold text-primary"
-                >
-                  {item}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {selectedDigest.map((item, rowIndex) =>
-              rowIndex === 1 ? (
-                <tr className="bg-orange-100 font-bold text-primary">
-                  <td
-                    className="py-2 text-center"
-                    colSpan={item.tableRowData.length}
+        <div className="flex min-h-[400px] w-full flex-col items-center">
+          <table className="mb-5 w-[350px] table-auto border-collapse border border-orange-400 lg:w-[400px]">
+            <thead>
+              <tr>
+                {tableHeader.map((item) => (
+                  <th
+                    key={item}
+                    className="border border-orange-300 bg-orange-100 px-5 py-2 font-bold text-primary lg:px-10"
                   >
-                    Sub Digests
-                  </td>
-                </tr>
-              ) : (
-                <tr key={item.tag}>
-                  {item.tableRowData.map((i, index) => (
+                    {item}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {selectedDigest.map((item, rowIndex) =>
+                rowIndex === 1 ? (
+                  <tr className="bg-orange-100 font-bold text-primary">
                     <td
-                      className={`border border-orange-300 px-5 py-5 text-center ${index === 1 || index === 2 ? "font-bold" : ""}`}
-                      key={index}
+                      className="py-2 text-center"
+                      colSpan={item.tableRowData.length}
                     >
-                      {i}
+                      Sub Digests
                     </td>
-                  ))}
-                </tr>
-              ),
-            )}
-          </tbody>
-        </table>
+                  </tr>
+                ) : (
+                  <tr key={item.tag}>
+                    {item.tableRowData.map((i, index) => (
+                      <td
+                        className={`border border-orange-300 px-5 py-5 text-center ${index === 1 || index === 2 ? "font-bold" : ""}`}
+                        key={index}
+                      >
+                        <div className="flex w-full items-center justify-center">
+                          {i}
+                        </div>
+                      </td>
+                    ))}
+                  </tr>
+                ),
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

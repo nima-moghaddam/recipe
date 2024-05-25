@@ -2,12 +2,13 @@
 import Image from "next/image";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
+import { removeFavourit, addFavourit } from "@/redux/reducers/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
 import InlineTextIcon from "./InlineTextIcon";
 import Link from "next/link";
 import SvgIcon from "./SvgIcon";
 import ImageHandler from "./ImageHandler";
+import { IRootState } from "@/redux/store";
 
 interface IRecipeCard {
   recipe: IRecipe;
@@ -17,7 +18,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
   const { image, images, label, id, calories, yield: serving } = recipe;
 
   const dispatch = useDispatch();
-  const { favorList } = useSelector((state: any) => state?.favourit);
+  const { favorList } = useSelector((state: IRootState) => state?.favourit);
 
   const isFavourite = favorList?.some((item: IRecipe) => item.id === id);
 
@@ -66,7 +67,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
           {label}
         </p>
         <Link
-          className="underline-offset-3 text-primary text-xs underline hover:text-orange-400"
+          className="underline-offset-3 text-xs text-primary underline hover:text-orange-400"
           href={`/recipe/${id}`}
         >
           View Recipe

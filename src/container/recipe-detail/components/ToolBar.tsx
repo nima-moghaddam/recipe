@@ -2,7 +2,7 @@
 import IconButton from "@/components/IconButton";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFavourit, addFavourit } from "@/redux/favouritSlice";
+import { removeFavourit, addFavourit } from "@/redux/reducers/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
 import { useRouter } from "next/navigation";
 import SvgIcon from "@/components/SvgIcon";

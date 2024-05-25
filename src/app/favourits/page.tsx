@@ -2,12 +2,13 @@
 import GridWrapper from "@/components/GridWrapper";
 import RecipeCard from "@/components/RecipeCard";
 import WarningWrapper from "@/components/WarningWrapper";
+import { IRootState } from "@/redux/store";
 import { IRecipe } from "@/types/Recipe-Interface";
 import React from "react";
 import { useSelector } from "react-redux";
 
 const Favourits = () => {
-  const { favorList } = useSelector((state: any) => state?.favourit);
+  const { favorList } = useSelector((state: IRootState) => state?.favourit);
 
   return (
     <section>

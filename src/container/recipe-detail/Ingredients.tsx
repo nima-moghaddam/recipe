@@ -3,21 +3,27 @@ import Button from "@/components/Button";
 import { IngredientsFormat } from "@/types/Recipe-Interface";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { IRootState } from "@/redux/store";
+import { toggleViewMore } from "@/redux/reducers/viewMoreSlice";
 
 interface IProps {
   ingredients: IngredientsFormat[];
 }
 
 const Ingredients = ({ ingredients }: IProps) => {
-  const [viewMoreStatus, setViewMoreStatus] = useState(false);
   const [currentIngredients, setCurrentIngredients] = useState<
     IngredientsFormat[]
   >([]);
 
+  const dispatch = useDispatch();
+  const { viewMoreStatus } = useSelector((state: IRootState) => state.viewMore);
   const btnRef = useRef<HTMLDivElement>(null);
 
+  console.log(viewMoreStatus);
+
   const handleViewMore = () => {
-    setViewMoreStatus((prev) => !prev);
+    dispatch(toggleViewMore());
     if (btnRef.current) {
       setTimeout(() => {
         btnRef!.current!.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -30,7 +36,7 @@ const Ingredients = ({ ingredients }: IProps) => {
       setCurrentIngredients(ingredients);
     } else {
       const mockArr = [...ingredients];
-      const slicedIngredients = mockArr.splice(0, 4);
+      const slicedIngredients = mockArr.splice(0, 5);
       setCurrentIngredients(slicedIngredients);
     }
   }, [viewMoreStatus]);

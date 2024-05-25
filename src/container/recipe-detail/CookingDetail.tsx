@@ -1,6 +1,11 @@
+"use client";
 import Badge from "@/components/Badge";
 import SvgIcon from "@/components/SvgIcon";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { IRootState } from "@/redux/store";
+import { toggleViewMore } from "@/redux/reducers/viewMoreSlice";
+
 interface IProps {
   detailList: string[];
   cautions?: string[];
@@ -8,13 +13,28 @@ interface IProps {
 }
 
 const CookingDetail = ({ detailList, cautions, mealTypes }: IProps) => {
+  const [currentDetailList, setCurrentDetailList] = useState<string[]>([]);
+
+  const dispatch = useDispatch();
+  const { viewMoreStatus } = useSelector((state: IRootState) => state.viewMore);
+
+  useEffect(() => {
+    if (viewMoreStatus) {
+      setCurrentDetailList(detailList);
+    } else {
+      const mockArr = [...detailList];
+      const slicedDetailList = mockArr.splice(0, 8);
+      setCurrentDetailList(slicedDetailList);
+    }
+  }, [viewMoreStatus]);
+
   return (
     <>
       <h3 className="mb-4 font-bold text-black">Ingredient Details</h3>
       <ul className="mb-5 flex flex-col">
-        {detailList.map((item, index) => (
+        {currentDetailList.map((item, index) => (
           <li key={index} className="mb-2 flex">
-            <span className="text-primary mr-2 font-bold">{index + 1}-</span>
+            <span className="mr-2 font-bold text-primary">{index + 1}-</span>
             <p>{item}</p>
           </li>
         ))}
