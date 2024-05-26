@@ -13,7 +13,6 @@ export const viewMoreSlice = createSlice({
     toggleViewMore: (state) => {
       state.viewMoreStatus = !state.viewMoreStatus;
     },
-   
   },
 });
 

@@ -1,8 +1,8 @@
 "use client";
-import useOutsideClick from "@/utils/useOutsideClick";
 import React, { useRef, ReactNode } from "react";
 import IconButton from "./IconButton";
 import SvgIcon from "./SvgIcon";
+import useOutsideClick from "@/utils/hooks/useOutsideClick";
 
 interface IDrawer {
   isOpen: boolean;

@@ -4,15 +4,25 @@ interface IWarning {
   message: string;
   hasData: boolean;
   children: ReactNode;
+  alertComponent?: ReactNode;
 }
 
-const WarningWrapper = ({ message, hasData, children }: IWarning) => {
+const WarningWrapper = ({
+  message,
+  hasData,
+  children,
+  alertComponent,
+}: IWarning) => {
   return (
     <>
       {hasData ? (
         <>{children}</>
       ) : (
-        <div className="w-full flex rounded items-center justify-center my-25 py-3 bg-red-200 text-red-600">{message}</div>
+        alertComponent || (
+          <div className="my-25 flex w-full items-center justify-center rounded bg-red-200 py-3 text-red-600">
+            {message}
+          </div>
+        )
       )}
     </>
   );
