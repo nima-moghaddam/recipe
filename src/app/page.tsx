@@ -26,7 +26,7 @@ export default async function HomePage() {
             <DishSvg height="500" width="1000" />
           </div>
         </div>
-        <div className="absolute left-[35%] top-[100px] md:top-10">
+        <div className="absolute left-[35%] top-[50px] md:top-10">
           <TomatoSvg />
         </div>
         <div className="absolute bottom-[0%] right-[10%] md:bottom-5">
