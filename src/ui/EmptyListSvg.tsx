@@ -5,9 +5,7 @@ const EmptyListSvg = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       data-name="Layer 1"
-      width="400"
-      height="400"
-      className="h-[200px] w-[200px] sm:h-[400px] sm:w-[400px]"
+      className="h-[250px] w-[250px] sm:h-[400px] sm:w-[400px]"
       viewBox="0 0 485.83373 483.5"
     >
       <path

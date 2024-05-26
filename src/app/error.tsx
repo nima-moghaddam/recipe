@@ -18,7 +18,7 @@ export default function Error({
 
   return (
     <div className="w-full h-full p-5 mt-20 flex flex-col items-center justify-center">
-      <h2 className="mb-4">we have encountered an error!</h2>
+      <h2 className="mb-4">We have encountered an error!</h2>
       <div className="flex items-center">
         <Button
           name="Back to Homepage"
