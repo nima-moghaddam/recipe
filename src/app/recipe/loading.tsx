@@ -1,8 +1,7 @@
 import GridWrapper from "@/components/GridWrapper";
+import { numArrayCreator } from "@/utils/functions/numArrayCreator";
 
 export default function Loading() {
-  const numArr = Array.from({ length: 12 }, (_, index) => index + 1);
-
   return (
     <>
       <div className="mb-5 w-full rounded border shadow-sm md:w-1/2">
@@ -12,7 +11,7 @@ export default function Loading() {
       </div>
 
       <GridWrapper>
-        {numArr.map((num) => (
+        {numArrayCreator(12).map((num) => (
           <div className="rounded border shadow-sm" key={num}>
             <div className="flex animate-pulse flex-col space-x-4">
               <div className="mb-2 h-24 w-full bg-slate-200"></div>

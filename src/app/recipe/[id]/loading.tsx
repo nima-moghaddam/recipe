@@ -1,8 +1,6 @@
-export default function Loading() {
-  const arr20 = Array.from({ length: 20 }, (_, index) => index + 1);
-  const arr10 = Array.from({ length: 10 }, (_, index) => index + 1);
-  const arr5 = Array.from({ length: 5 }, (_, index) => index + 1);
+import { numArrayCreator } from "@/utils/functions/numArrayCreator";
 
+export default function Loading() {
   return (
     <div className="animate-pulse">
       <div className="mb-3 h-8 w-1/6 rounded bg-slate-200"></div>
@@ -28,7 +26,7 @@ export default function Loading() {
         <div className="col-span-12 lg:col-span-4">
           <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
           <div className="mb-10 flex flex-wrap border-b border-slate-200 pb-5">
-            {arr20.map((num) => (
+            {numArrayCreator(20).map((num) => (
               <div
                 key={num}
                 className="mb-2 mr-2 h-7 w-24 rounded bg-slate-200"
@@ -42,7 +40,7 @@ export default function Loading() {
           </div>
         </div>
         <div className="col-span-12 md:col-span-6 lg:col-span-8">
-          {arr5.map((num) => (
+          {numArrayCreator(5).map((num) => (
             <div
               key={num}
               className="mb-5 h-24 w-full rounded bg-slate-200"
@@ -52,7 +50,7 @@ export default function Loading() {
         <div className="col-span-12 mb-5 md:col-span-6 lg:col-span-4">
           <div className="mb-3 h-4 w-1/6 rounded bg-slate-200"></div>
           <div className="mb-5">
-            {arr10.map((num) => (
+            {numArrayCreator(10).map((num) => (
               <div
                 key={num}
                 className="mb-5 h-4 w-full rounded bg-slate-200"

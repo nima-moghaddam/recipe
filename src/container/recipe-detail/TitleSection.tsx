@@ -1,6 +1,6 @@
 import InlineTextIcon from "@/components/InlineTextIcon";
 import { IRecipe } from "@/types/Recipe-Interface";
-import { formatDateToShortName } from "@/utils/formatDateToShortName";
+import { formatDateToShortName } from "@/utils/functions/formatDateToShortName";
 import React from "react";
 import ToolBar from "./components/ToolBar";
 import SvgIcon from "@/components/SvgIcon";

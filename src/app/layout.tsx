@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ReduxProvider>
+          <Navbar />
           <Suspense fallback={<Loading />}>
-            <Navbar />
             <main className="p-md-10 p-5">{children}</main>
           </Suspense>
         </ReduxProvider>
