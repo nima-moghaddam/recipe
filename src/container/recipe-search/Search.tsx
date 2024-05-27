@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { ChangeEvent, KeyboardEvent } from "react";
 import { useSearchParams } from "next/navigation";
-import SvgIcon from "./SvgIcon";
+import SvgIcon from "@/components/SvgIcon";
 
 const Search = () => {
   const searchParams = useSearchParams();
@@ -19,8 +19,11 @@ const Search = () => {
       (e as KeyboardEvent<HTMLInputElement>).key === "Enter" &&
       value.length > 0
     ) {
+      params.delete("query");
+      params.delete("page");
+
       params.set("query", value.trim());
-      router.replace(`/recipe?${params.toString()}`);
+      router.replace(`/recipe?${params.toString()}&page=1`);
     }
   };
 

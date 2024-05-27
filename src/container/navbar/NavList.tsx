@@ -8,11 +8,11 @@ const navList = [
   { name: "Favourit", url: "/favourits" },
 ];
 
-interface INavigationLinks {
+interface IProps {
   containerClasses: string;
 }
 
-const NavList = ({ containerClasses }: INavigationLinks) => {
+const NavList = ({ containerClasses }: IProps) => {
   return (
     <ul className={containerClasses}>
       {navList.map((item) => (

@@ -1,17 +1,16 @@
-import RecipeCard from "@/components/RecipeCard";
-import Search from "@/components/Search";
-import WarningWrapper from "@/components/WarningWrapper";
 import { getRecipies } from "@/services/getRecipies";
 import { IQueryResponse } from "@/types/Query-Interface";
-import { IRecipe } from "@/types/Recipe-Interface";
-import GridWrapper from "@/components/GridWrapper";
+import RecipeSearch from "@/container/recipe-search";
 
 export default async function RecipeSearchPage({
   searchParams,
 }: {
-  searchParams: { query: string };
+  searchParams: { query: string; page: number };
 }) {
-  const data: IQueryResponse = await getRecipies(searchParams.query);
+  const query = searchParams.query;
+  const page = searchParams.page;
+
+  const data: IQueryResponse = await getRecipies(query);
 
   // Edamam api does not provide any ID in response object
   // so i derived it from its uri
@@ -22,16 +21,7 @@ export default async function RecipeSearchPage({
 
   return (
     <section>
-      <div className="mb-5">
-        <Search />
-      </div>
-      <WarningWrapper message="No recipe found!" hasData={!!recipies?.length}>
-        <GridWrapper>
-          {recipies?.map((recipe: IRecipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </GridWrapper>
-      </WarningWrapper>
+      <RecipeSearch recipies={recipies} searchParams={searchParams} />
     </section>
   );
 }
