@@ -8,7 +8,7 @@ const HomeButton = () => {
 
   return (
     <Button
-      onClick={() => push("/recipe?query=general")}
+      onClick={() => push("/recipe")}
       name="Explore Recipes"
     />
   );

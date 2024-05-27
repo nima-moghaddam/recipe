@@ -1,15 +1,15 @@
-import { baseUrl, apiKey, appId, uriPrefix } from "@/enmus/Api-Enum";
+import { baseUrl, apiKey, appId } from "@/enmus/Api-Enum";
 
 export const getRecipies = async (query: string) => {
   try {
     const response = await fetch(
-      `${baseUrl}/api/recipes/v2?type=public&q=${query}&app_id=${appId}&app_key=${apiKey}`,
+      `${baseUrl}/search?q=${query}&app_id=${appId}&app_key=${apiKey}&from=0&to=50`,
       {
         headers: {
           "Content-Type": "application/json",
         },
         // cache: "no-store",
-      }
+      },
     );
 
     if (!response.ok) {

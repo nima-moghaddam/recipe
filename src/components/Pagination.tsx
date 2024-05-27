@@ -1,27 +1,40 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import ReactPaginate from "react-paginate";
 
 interface IProps {
   totalData: number;
   dataPerPage: number;
+  currentPage: number;
+  urlPath: string;
 }
 
-const Pagination = ({ totalData, dataPerPage }: IProps) => {
+const Pagination = ({
+  totalData,
+  dataPerPage,
+  urlPath,
+  currentPage,
+}: IProps) => {
+  const router = useRouter();
   const pageCount = Math.ceil(totalData / dataPerPage);
 
-  const handlePageClick = () => {};
+  const handlePageClick = (event: { selected: number }) => {
+    const selectedPage = event.selected;
+
+    router.push(`${urlPath}&page=${selectedPage + 1}`);
+  };
 
   return (
     <ReactPaginate
-      previousLabel={"Previous"}
-      nextLabel={"Next"}
-      breakLabel={"..."}
-      breakClassName={"break-me"}
       pageCount={pageCount}
       marginPagesDisplayed={2}
       pageRangeDisplayed={5}
       onPageChange={handlePageClick}
+      forcePage={currentPage - 1}
+      previousLabel={"Previous"}
+      nextLabel={"Next"}
+      breakLabel={"..."}
+      breakClassName={"break-me"}
       containerClassName={"pagination"}
       pageClassName={"page-item"}
       pageLinkClassName={"page-link"}

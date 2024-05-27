@@ -4,8 +4,8 @@ import WarningWrapper from "@/components/WarningWrapper";
 import { IRecipe } from "@/types/Recipe-Interface";
 import React from "react";
 import Search from "./Search";
-import LoadMore from "./LoadMore";
 import Pagination from "@/components/Pagination";
+import NoRecipeFound from "./NoRecipeFound";
 
 interface IProps {
   recipies: IRecipe[];
@@ -13,27 +13,34 @@ interface IProps {
 }
 
 const RecipeSearch = ({ recipies, searchParams }: IProps) => {
-  const mockRecipe = [...recipies];
   const page = Number(searchParams.page);
-  const currentRecipes = mockRecipe.splice(0, page === 1 ? 8 : 7 + page);
-  const hasAllItemsFetched = currentRecipes.length === recipies.length;
+  const dataPerPage = 8;
+
+  const currentRecipes = recipies.slice(
+    page === 1 ? 0 : (page - 1) * dataPerPage,
+    (page - 1) * dataPerPage + dataPerPage,
+  );
 
   return (
     <>
       <div className="mb-5">
         <Search />
       </div>
-      <WarningWrapper message="No recipe found!" hasData={!!recipies?.length}>
-        <GridWrapper>
+      <WarningWrapper
+        alertComponent={<NoRecipeFound />}
+        hasData={!!searchParams.query}
+      >
+        <GridWrapper classes="mb-5">
           {currentRecipes?.map((recipe: IRecipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </GridWrapper>
-        <Pagination dataPerPage={8} totalData={recipies.length} />
-        {/* <LoadMore
-          searchParams={{ page, query: searchParams.query }}
-          showBtn={!hasAllItemsFetched}
-        /> */}
+        <Pagination
+          dataPerPage={8}
+          totalData={recipies.length}
+          currentPage={page}
+          urlPath={`/recipe?query=${searchParams.query}`}
+        />
       </WarningWrapper>
     </>
   );

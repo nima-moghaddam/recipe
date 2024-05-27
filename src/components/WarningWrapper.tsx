@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface IWarning {
-  message: string;
+  message?: string;
   hasData: boolean;
   children: ReactNode;
   alertComponent?: ReactNode;

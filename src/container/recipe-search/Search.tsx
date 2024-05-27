@@ -24,6 +24,11 @@ const Search = () => {
 
       params.set("query", value.trim());
       router.replace(`/recipe?${params.toString()}&page=1`);
+    } else if (
+      (e as KeyboardEvent<HTMLInputElement>).key === "Enter" &&
+      value.length === 0
+    ) {
+      router.replace(`/recipe`);
     }
   };
 

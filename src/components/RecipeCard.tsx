@@ -27,7 +27,7 @@ const RecipeCard = ({ recipe }: IRecipeCard) => {
     else dispatch(addFavourit(recipe));
   };
 
-  console.log(recipe);
+  // console.log(recipe);
 
   return (
     <div className="overflow-hidden rounded-2xl border shadow-lg">

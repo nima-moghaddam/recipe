@@ -13,7 +13,6 @@ const FavouritsList = () => {
 
   return (
     <WarningWrapper
-      message="Your favourit list is empty!"
       hasData={!!favorList?.length}
       alertComponent={<NoFavouritFound />}
     >
