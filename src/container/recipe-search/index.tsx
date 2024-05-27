@@ -5,6 +5,7 @@ import { IRecipe } from "@/types/Recipe-Interface";
 import React from "react";
 import Search from "./Search";
 import LoadMore from "./LoadMore";
+import Pagination from "@/components/Pagination";
 
 interface IProps {
   recipies: IRecipe[];
@@ -14,9 +15,7 @@ interface IProps {
 const RecipeSearch = ({ recipies, searchParams }: IProps) => {
   const mockRecipe = [...recipies];
   const page = Number(searchParams.page);
-
   const currentRecipes = mockRecipe.splice(0, page === 1 ? 8 : 7 + page);
-
   const hasAllItemsFetched = currentRecipes.length === recipies.length;
 
   return (
@@ -30,10 +29,11 @@ const RecipeSearch = ({ recipies, searchParams }: IProps) => {
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </GridWrapper>
-        <LoadMore
+        <Pagination dataPerPage={8} totalData={recipies.length} />
+        {/* <LoadMore
           searchParams={{ page, query: searchParams.query }}
           showBtn={!hasAllItemsFetched}
-        />
+        /> */}
       </WarningWrapper>
     </>
   );

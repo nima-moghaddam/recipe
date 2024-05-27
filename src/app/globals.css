@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.page-item {
+  margin: 0 0.25rem;
+}
+
+.page-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid #f79f1a;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #f79f1a;
+}
+
+.page-link:hover {
+  background-color: #f79f1a;
+  color: white;
+}
+
+.active .page-link {
+  background-color: #f79f1a;
+  color: white;
+  border-color: #f79f1a;
+}
