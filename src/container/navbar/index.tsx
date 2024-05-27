@@ -1,8 +1,8 @@
 import React from "react";
 import DrawerContainer from "./DrawerContainer";
-import IconButton from "@/components/IconButton";
 import NavList from "./NavList";
 import SvgIcon from "@/components/SvgIcon";
+import ToolBarIcons from "./ToolBarIcons";
 
 const Navbar = () => {
   return (
@@ -17,8 +17,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex md:items-center">
-          <IconButton icon={<SvgIcon name="search" width={20} height={20}  />} classes="mr-3" />
-          <IconButton icon={<SvgIcon name="user" width={20} height={20}  />} classes="mr-3" />
+          <ToolBarIcons />
         </div>
         <div className="block md:hidden">
           <DrawerContainer />
