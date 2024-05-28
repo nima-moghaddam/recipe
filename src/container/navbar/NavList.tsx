@@ -5,7 +5,7 @@ import React from "react";
 const navList = [
   { name: "Home", url: "/" },
   { name: "Comment", url: "/comments" },
-  { name: "Favourit", url: "/favourits" },
+  { name: "Favourit", url: "/favourits?page=1" },
 ];
 
 interface IProps {

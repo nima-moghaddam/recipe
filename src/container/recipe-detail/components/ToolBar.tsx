@@ -4,19 +4,22 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavourit, addFavourit } from "@/redux/reducers/favouritSlice";
 import { IRecipe } from "@/types/Recipe-Interface";
-import { useRouter } from "next/navigation";
 import SvgIcon from "@/components/SvgIcon";
+import { IRootState } from "@/redux/store";
+import { useParams } from "next/navigation";
 
 interface IProps {
   recipe: IRecipe;
 }
 
 const ToolBar = ({ recipe }: IProps) => {
-  const router = useRouter();
   const dispatch = useDispatch();
-  
-  const { favorList } = useSelector((state: any) => state?.favourit);
-  const isFavourite = favorList?.some((item: IRecipe) => item.id === recipe.id);
+  const params = useParams<{ recipe: string; id: string }>();
+  const recipeId = params.id;
+
+  const { favorList } = useSelector((state: IRootState) => state?.favourit);
+
+  const isFavourite = favorList?.some((item: IRecipe) => item.id === recipeId);
 
   const handleFavourite = () => {
     if (isFavourite) dispatch(removeFavourit(recipe.id));
@@ -40,7 +43,6 @@ const ToolBar = ({ recipe }: IProps) => {
       <IconButton
         icon={<SvgIcon name="link" color="primary" width={25} height={25} />}
         onClick={() =>
-          // router.push(recipe?.shareAs || "https://www.edamam.com/")
           window.open(recipe?.shareAs || "https://www.edamam.com/")
         }
       />

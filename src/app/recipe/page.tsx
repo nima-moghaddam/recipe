@@ -8,8 +8,6 @@ export default async function RecipeSearchPage({
   searchParams: { query: string; page: number };
 }) {
   const query = searchParams.query;
-  const page = searchParams.page;
-
   const data: IQueryResponse = await getRecipies(query);
 
   // Edamam api does not provide any ID in response object

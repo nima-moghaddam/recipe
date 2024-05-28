@@ -6,6 +6,7 @@ import React from "react";
 import Search from "./Search";
 import Pagination from "@/components/Pagination";
 import NoRecipeFound from "./NoRecipeFound";
+import { paginateHandler } from "@/utils/functions/paginateHandler";
 
 interface IProps {
   recipies: IRecipe[];
@@ -16,10 +17,11 @@ const RecipeSearch = ({ recipies, searchParams }: IProps) => {
   const page = Number(searchParams.page);
   const dataPerPage = 8;
 
-  const currentRecipes = recipies.slice(
-    page === 1 ? 0 : (page - 1) * dataPerPage,
-    (page - 1) * dataPerPage + dataPerPage,
-  );
+  const currentRecipes = paginateHandler<IRecipe>({
+    dataPerPage,
+    page,
+    list: recipies,
+  });
 
   return (
     <>

@@ -7,9 +7,23 @@ import { IRecipe } from "@/types/Recipe-Interface";
 import React from "react";
 import { useSelector } from "react-redux";
 import NoFavouritFound from "./NoFavouritFound";
+import Pagination from "@/components/Pagination";
+import { paginateHandler } from "@/utils/functions/paginateHandler";
 
-const FavouritsList = () => {
+interface IProps {
+  page: number;
+}
+
+const FavouritsList = ({ page }: IProps) => {
+  const dataPerPage = 8;
+
   const { favorList } = useSelector((state: IRootState) => state?.favourit);
+
+  const currentFavourites = paginateHandler<IRecipe>({
+    dataPerPage,
+    page,
+    list: favorList,
+  });
 
   return (
     <WarningWrapper
@@ -17,10 +31,16 @@ const FavouritsList = () => {
       alertComponent={<NoFavouritFound />}
     >
       <GridWrapper>
-        {favorList?.map((recipe: IRecipe) => (
+        {currentFavourites?.map((recipe: IRecipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
       </GridWrapper>
+      <Pagination
+        dataPerPage={8}
+        totalData={favorList.length}
+        currentPage={page}
+        urlPath={`/favourits?`}
+      />
     </WarningWrapper>
   );
 };
