@@ -8,7 +8,7 @@ const ToolBarIcons = () => {
   const { push } = useRouter();
 
   return (
-    <>
+    <div className="flex justify-center items-center">
       <IconButton
         icon={<SvgIcon name="search" width={20} height={20} />}
         classes="mr-3"
@@ -19,7 +19,7 @@ const ToolBarIcons = () => {
         classes="mr-3"
         onClick={() => push("/profile")}
       />
-    </>
+    </div>
   );
 };
 
