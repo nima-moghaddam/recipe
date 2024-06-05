@@ -11,7 +11,10 @@ export default async function RecipeDetailPage({
   const uri = uriPrefix + params.id;
   const encodedUri = encodeURIComponent(uri);
   const data = await getRecipeDetail(encodedUri);
-  const recipeDetail: IRecipe = data.hits[0].recipe;
+  const recipeDetail: IRecipe = {
+    ...data.hits[0].recipe,
+    id: data.hits[0].recipe.uri?.split("_")[1],
+  };
 
   return (
     <section>

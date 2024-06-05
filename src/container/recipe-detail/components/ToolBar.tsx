@@ -22,7 +22,7 @@ const ToolBar = ({ recipe }: IProps) => {
   const isFavourite = favorList?.some((item: IRecipe) => item.id === recipeId);
 
   const handleFavourite = () => {
-    if (isFavourite) dispatch(removeFavourit(recipe.id));
+    if (isFavourite) dispatch(removeFavourit(recipeId));
     else dispatch(addFavourit(recipe));
   };
 

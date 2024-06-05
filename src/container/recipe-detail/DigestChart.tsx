@@ -55,8 +55,6 @@ const DigestChart = ({ digests }: IProps) => {
   );
   const [hovered, setHovered] = useState<number | null>(null);
 
-  console.log(selectedDigest);
-
   const handleClick = (event: any, index: number) => {
     const currentDigest = chartData[index];
 

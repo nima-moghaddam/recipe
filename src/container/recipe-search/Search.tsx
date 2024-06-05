@@ -35,7 +35,7 @@ const Search = () => {
   return (
     <div className="relative w-full md:w-1/2">
       <input
-        className="w-full rounded-lg border py-2 pl-10 pr-4 text-primary shadow-sm outline-none focus:border-primary"
+        className="w-full rounded-lg border py-2 pl-10 pr-4 text-primary shadow-sm outline-none focus:border-primary focus:shadow-sm focus:shadow-primary"
         placeholder="Search"
         onKeyDown={handleUserType}
         defaultValue={""}
