@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## How to run the application locally
 
-## Getting Started
+System Requirements:
 
-First, run the development server:
+Node.js 18.17 or later.
+macOS, Windows (including WSL), and Linux are supported.
+
+To create a project, run:  npx create-next-app@latest
+
+
+To manually create a new Next.js app, install the required packages:  npm install next@latest react@latest react-dom@latest
+
+Open your package.json file and add the following scripts:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+dev: runs next dev to start Next.js in development mode.
+build: runs next build to build the application for production usage.
+start: runs next start to start a Next.js production server.
+lint: runs next lint to set up Next.js' built-in ESLint configuration.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Packages Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+you can simply install all packages with 
+npm i
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+for specific packages follow as bellow
 
-## Learn More
+```bash
+# Redux Toolkit
+npm install @reduxjs/toolkit
+npm install react-redux
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Api
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+for more info refer to  https://spoonacular.com/
+for more info refer to  https://developer.edamam.com/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is a step-by-step guide on how to deploy your Next.js project to Vercel using Git integration.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---- Prerequisites ----
+
+Before you begin, make sure you have the following:
+
+- A Next.js project
+- Node.js and npm installed on your local machine
+- A Vercel account
+
+---- Steps ----
+
+```bash
+# 1. Install the Vercel CLI
+npm install -g vercel
+
+# 2. Navigate to your project directory
+cd your-nextjs-project
+
+# 3. Initialize Git in your project (if not already initialized)
+git init
+
+# 4. Login to Vercel
+vercel login
+
+# 5. Link your project to Vercel
+vercel
+
+# 6. Push your project to a Git repository
+git add .
+git commit -m "Initial commit"
+git remote add origin <repository-url>
+git push -u origin main
+
+# 7. Create a Vercel project from Git
+vercel
+
+# 8. Set up environment variables
+vercel env add
+
+# 9. Alias (optional)
+vercel alias <deployment-url> your-domain-name.vercel.app
+
+# 10. Redeploy (optional)
+# If you make changes to your project and want to redeploy, you can simply push your changes to your Git repository. Vercel will automatically redeploy your project.
+
+```
+project depolyed with Vercel on https://recipe-project-vert.vercel.app/ link
+
+
+## Links
+
+Figma ---->
+
+https://www.figma.com/design/Yk69jYZELaUJ3ixEbpe5QS/Recipedia---Landing-Page-(Community)?node-id=0-1&t=Pw941XrYH5tZ60gR-0
+
+https://www.figma.com/design/gjsPGgNUX8GyCULbzorRCH/Food-Recipe-App-(Community)?node-id=1-3&t=5zRcmNdCyqOxNqsJ-0
+
+https://www.figma.com/design/i0BDdPaSakl3zqRHRmnx8O/food-Recipe-Website-Ui-Kit-(Community)?node-id=1-57&t=NUxIGimLEgDKaXKd-0
